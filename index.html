@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17312d">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="田島二丁目の整骨院の仮公開ランディングページです。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%232e7567'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='white'%3E田%3C/text%3E%3C/svg%3E">
+  <title>田島二丁目の整骨院｜地域に寄り添う身体ケア</title>
+  <style>
+    :root {
+      --ink: #17312d;
+      --ink-soft: #49605b;
+      --accent: #2e7567;
+      --accent-dark: #1d554b;
+      --warm: #c96e43;
+      --cream: #f5f0e7;
+      --paper: #fffdf9;
+      --line: rgba(23, 49, 45, 0.16);
+      --shadow: 0 24px 60px rgba(23, 49, 45, 0.13);
+      --radius: 24px;
+      --content: 1120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Noto Sans JP", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      font-feature-settings: "palt";
+      line-height: 1.85;
+      letter-spacing: 0.035em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, summary { font: inherit; }
+
+    .draft-bar {
+      position: relative;
+      z-index: 30;
+      padding: 7px 16px;
+      color: #fff;
+      background: var(--warm);
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.08em;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(23, 49, 45, 0.08);
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), var(--content));
+      min-height: 76px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 38px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50% 50% 46% 54% / 52% 42% 58% 48%;
+      color: #fff;
+      background: var(--accent);
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-size: 20px;
+      box-shadow: 0 8px 18px rgba(46, 117, 103, 0.22);
+    }
+
+    .brand-text { line-height: 1.25; }
+    .brand-text small { display: block; color: var(--ink-soft); font-size: 10px; letter-spacing: 0.16em; }
+    .brand-text strong { font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 17px; }
+
+    .header-nav { display: flex; align-items: center; gap: 26px; }
+    .header-nav a { font-size: 13px; font-weight: 700; text-decoration: none; }
+    .header-nav a:not(.header-cta) { position: relative; }
+    .header-nav a:not(.header-cta)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      left: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .25s ease;
+    }
+    .header-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    .header-cta,
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0 24px;
+      color: #fff;
+      background: var(--accent);
+      box-shadow: 0 12px 28px rgba(46, 117, 103, 0.22);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .header-cta { min-height: 44px; padding-inline: 20px; }
+    .header-cta:hover, .button:hover { transform: translateY(-2px); background: var(--accent-dark); box-shadow: 0 16px 34px rgba(46, 117, 103, 0.28); }
+    .button-light { color: var(--ink); background: #fff; box-shadow: 0 12px 30px rgba(23, 49, 45, 0.12); }
+    .button-light:hover { color: #fff; }
+
+    .hero {
+      position: relative;
+      min-height: min(780px, calc(100svh - 108px));
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      background: #e9e4d9;
+    }
+
+    .hero-media,
+    .hero-media::after {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-media { z-index: -2; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero-media::after {
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(255,253,249,.98) 0%, rgba(255,253,249,.93) 33%, rgba(255,253,249,.34) 62%, rgba(23,49,45,.06) 100%),
+        linear-gradient(0deg, rgba(23,49,45,.18), transparent 36%);
+    }
+
+    .hero-inner {
+      width: min(calc(100% - 48px), var(--content));
+      margin: auto;
+      padding: 92px 0 110px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 42px; height: 1px; background: currentColor; }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 690px;
+      margin-bottom: 26px;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-size: clamp(42px, 5.5vw, 76px);
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: 0.025em;
+    }
+    h1 em { color: var(--warm); font-style: normal; }
+
+    .hero-lead {
+      max-width: 590px;
+      margin-bottom: 34px;
+      color: #344b47;
+      font-size: clamp(15px, 1.8vw, 18px);
+      font-weight: 600;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+    .hero-note { margin: 18px 0 0; color: var(--ink-soft); font-size: 11px; }
+
+    .principles {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 40px), 1020px);
+      margin: -68px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      color: #fff;
+      background: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .principle { position: relative; min-height: 168px; padding: 34px 32px; }
+    .principle + .principle::before { content: ""; position: absolute; top: 28px; bottom: 28px; left: 0; width: 1px; background: rgba(255,255,255,.18); }
+    .principle span { display: block; margin-bottom: 12px; color: #b9d6cf; font-family: Georgia, serif; font-size: 13px; letter-spacing: .15em; }
+    .principle strong { display: block; margin-bottom: 8px; font-family: "Yu Mincho", serif; font-size: 20px; }
+    .principle p { margin: 0; color: rgba(255,255,255,.73); font-size: 12px; line-height: 1.75; }
+
+    .section { padding: 120px 0; }
+    .section-cream { background: var(--cream); }
+    .section-dark { color: #fff; background: var(--ink); }
+    .container { width: min(calc(100% - 48px), var(--content)); margin: auto; }
+    .narrow { width: min(calc(100% - 48px), 840px); margin: auto; }
+
+    .section-heading { margin-bottom: 62px; }
+    .section-heading.center { text-align: center; }
+    .section-heading.center .eyebrow { justify-content: center; }
+    .section-heading.center .eyebrow::after { content: ""; width: 42px; height: 1px; background: currentColor; }
+    .section-heading h2 {
+      margin-bottom: 20px;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-size: clamp(31px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+    .section-heading p { max-width: 720px; margin-bottom: 0; color: var(--ink-soft); }
+    .section-dark .section-heading p, .section-dark .eyebrow { color: #b9d6cf; }
+
+    .worry-list { border-top: 1px solid var(--line); }
+    .worry-row {
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      align-items: center;
+      gap: 28px;
+      min-height: 112px;
+      border-bottom: 1px solid var(--line);
+    }
+    .worry-number { color: var(--warm); font-family: Georgia, serif; font-size: 18px; }
+    .worry-row strong { font-family: "Yu Mincho", serif; font-size: clamp(18px, 2vw, 24px); font-weight: 600; }
+    .worry-row small { color: var(--ink-soft); font-size: 12px; }
+    .worry-arrow { color: var(--accent); font-size: 24px; }
+
+    .concept-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 88px; align-items: start; }
+    .concept-sticky { position: sticky; top: 120px; }
+    .concept-sticky .section-heading { margin: 0; }
+    .concept-copy { border-left: 1px solid rgba(255,255,255,.2); padding-left: 54px; }
+    .concept-point { padding: 10px 0 42px; }
+    .concept-point + .concept-point { padding-top: 42px; border-top: 1px solid rgba(255,255,255,.18); }
+    .concept-point b { display: block; margin-bottom: 10px; color: #b9d6cf; font-family: Georgia, serif; font-size: 14px; letter-spacing: .14em; }
+    .concept-point h3 { margin-bottom: 14px; font-family: "Yu Mincho", serif; font-size: 25px; font-weight: 600; }
+    .concept-point p { margin: 0; color: rgba(255,255,255,.72); font-size: 14px; }
+
+    .care-list { border-top: 1px solid var(--line); }
+    .care-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 50px;
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .care-item h3 { margin: 0; color: var(--accent-dark); font-family: "Yu Mincho", serif; font-size: 23px; }
+    .care-item p { margin: 0; color: var(--ink-soft); }
+
+    .flow { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .flow-step { position: relative; min-height: 260px; padding: 36px 28px; }
+    .flow-step + .flow-step { border-left: 1px solid var(--line); }
+    .flow-step b { display: block; margin-bottom: 34px; color: var(--warm); font-family: Georgia, serif; font-size: 15px; letter-spacing: .12em; }
+    .flow-step h3 { font-family: "Yu Mincho", serif; font-size: 21px; }
+    .flow-step p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+
+    .faq-list { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary {
+      position: relative;
+      display: grid;
+      grid-template-columns: 38px 1fr 28px;
+      align-items: center;
+      gap: 14px;
+      min-height: 92px;
+      padding: 20px 0;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 800;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "Q"; color: var(--accent); font-family: Georgia, serif; font-size: 19px; }
+    summary::after { content: "+"; color: var(--accent); font-size: 26px; font-weight: 300; transition: transform .25s ease; }
+    details[open] summary::after { transform: rotate(45deg); }
+    .faq-answer { padding: 0 44px 30px 52px; color: var(--ink-soft); font-size: 14px; }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .contact::before {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      right: -160px;
+      bottom: -260px;
+      border: 1px solid rgba(46,117,103,.25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 60px rgba(46,117,103,.035), 0 0 0 120px rgba(46,117,103,.025);
+    }
+    .contact-grid { position: relative; display: grid; grid-template-columns: 1fr .9fr; gap: 72px; align-items: start; }
+    .contact-copy h2 { margin-bottom: 24px; font-family: "Yu Mincho", serif; font-size: clamp(34px, 4vw, 54px); line-height: 1.4; }
+    .contact-copy p { color: var(--ink-soft); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button-disabled { cursor: not-allowed; opacity: .7; }
+    .clinic-info { margin: 0; border-top: 1px solid var(--line); }
+    .clinic-info div { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .clinic-info dt { font-weight: 800; }
+    .clinic-info dd { margin: 0; color: var(--ink-soft); }
+
+    .site-footer { padding: 46px 24px 100px; color: rgba(255,255,255,.74); background: var(--ink); text-align: center; }
+    .site-footer strong { display: block; margin-bottom: 10px; color: #fff; font-family: "Yu Mincho", serif; font-size: 20px; }
+    .site-footer p { margin: 0; font-size: 11px; }
+
+    .mobile-cta { display: none; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    @media (max-width: 860px) {
+      .header-nav a:not(.header-cta) { display: none; }
+      .hero { min-height: 720px; align-items: end; }
+      .hero-media img { object-position: 64% center; }
+      .hero-media::after { background: linear-gradient(0deg, rgba(255,253,249,.98) 0%, rgba(255,253,249,.95) 40%, rgba(255,253,249,.20) 76%, rgba(23,49,45,.05) 100%); }
+      .hero-inner { padding: 300px 0 104px; }
+      .hero-lead { max-width: 520px; }
+      .concept-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+      .concept-sticky { position: static; }
+      .concept-copy { padding-left: 0; border-left: 0; }
+      .flow { grid-template-columns: repeat(2, 1fr); }
+      .flow-step:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .flow-step:nth-child(4) { border-top: 1px solid var(--line); }
+    }
+
+    @media (max-width: 640px) {
+      body { padding-bottom: 68px; line-height: 1.78; }
+      .draft-bar { font-size: 10px; }
+      .header-inner { width: min(calc(100% - 28px), var(--content)); min-height: 62px; }
+      .brand-mark { width: 34px; }
+      .brand-text strong { font-size: 15px; }
+      .header-nav { display: none; }
+      .hero { min-height: 720px; }
+      .hero-inner { width: min(calc(100% - 34px), var(--content)); padding: 290px 0 86px; }
+      .hero-media img { object-position: 68% center; }
+      h1 { margin-bottom: 18px; font-size: clamp(36px, 11.5vw, 52px); line-height: 1.34; }
+      .hero-lead { margin-bottom: 24px; font-size: 14px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .principles { width: calc(100% - 28px); margin-top: -48px; grid-template-columns: 1fr; }
+      .principle { min-height: auto; padding: 25px 24px; }
+      .principle + .principle::before { top: 0; right: 24px; bottom: auto; left: 24px; width: auto; height: 1px; }
+      .section { padding: 86px 0; }
+      .container, .narrow { width: min(calc(100% - 36px), var(--content)); }
+      .section-heading { margin-bottom: 42px; }
+      .section-heading h2 { font-size: 32px; }
+      .worry-row { grid-template-columns: 38px 1fr 18px; gap: 12px; min-height: 98px; }
+      .worry-row small { display: block; margin-top: 5px; }
+      .care-item { grid-template-columns: 1fr; gap: 12px; padding: 30px 0; }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step { min-height: auto; padding: 28px 8px; }
+      .flow-step + .flow-step { border-top: 1px solid var(--line); border-left: 0; }
+      .flow-step b { margin-bottom: 16px; }
+      summary { grid-template-columns: 30px 1fr 22px; min-height: 84px; gap: 10px; font-size: 14px; }
+      .faq-answer { padding: 0 8px 26px 40px; }
+      .contact-actions { flex-direction: column; }
+      .clinic-info div { grid-template-columns: 90px 1fr; gap: 10px; font-size: 13px; }
+      .mobile-cta {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 40;
+        display: flex;
+        gap: 8px;
+        padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(23,49,45,.1);
+        background: rgba(255,253,249,.96);
+        backdrop-filter: blur(14px);
+      }
+      .mobile-cta a { flex: 1; min-height: 48px; padding: 0 12px; font-size: 13px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="draft-bar">現在制作中の仮ページです。診療情報・料金・予約方法は確定後に更新します。</div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="ページ上部へ戻る">
+        <span class="brand-mark" aria-hidden="true">田</span>
+        <span class="brand-text"><small>TAJIMA 2-CHOME</small><strong>田島二丁目の整骨院</strong></span>
+      </a>
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="#concept">当院の考え方</a>
+        <a href="#flow">ご来院の流れ</a>
+        <a href="#faq">よくある質問</a>
+        <a class="header-cta" href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="./assets/images/hero-consultation.webp" alt="" width="1600" height="818" fetchpriority="high">
+      </div>
+      <div class="hero-inner">
+        <p class="eyebrow">Tajima 2-chome Osteopathic Clinic</p>
+        <h1 id="hero-title">そのつらさを、<br><em>ひとりで我慢しない。</em></h1>
+        <p class="hero-lead">まずは今のお身体について、丁寧にお聞かせください。田島二丁目で、毎日の暮らしに寄り添う身体ケアを目指します。</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">相談方法を確認する <span aria-hidden="true">→</span></a>
+          <a class="button button-light" href="#concept">当院の考え方</a>
+        </div>
+        <p class="hero-note">※写真はイメージです。掲載内容は現在調整中です。</p>
+      </div>
+    </section>
+
+    <section class="principles" aria-label="当院が大切にする3つの姿勢">
+      <div class="principle">
+        <span>01 / LISTEN</span>
+        <strong>まず、話を聞く</strong>
+        <p>不安や困りごとを置き去りにせず、今の状態を一緒に整理します。</p>
+      </div>
+      <div class="principle">
+        <span>02 / CHECK</span>
+        <strong>身体を丁寧に確認</strong>
+        <p>決めつけず、動きや生活背景を確認したうえで方針を考えます。</p>
+      </div>
+      <div class="principle">
+        <span>03 / SUPPORT</span>
+        <strong>暮らしまで見据える</strong>
+        <p>通院中だけでなく、日常で無理なく続けられるケアを大切にします。</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="worry-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Do you have these concerns?</p>
+          <h2 id="worry-title">こんなお悩みは<br>ありませんか？</h2>
+          <p>症状の感じ方や背景は人それぞれです。気になることがあれば、まずは相談できる場所をつくります。</p>
+        </div>
+        <div class="worry-list reveal">
+          <div class="worry-row"><span class="worry-number">01</span><div><strong>首・肩の重さやつらさ</strong><small>デスクワークや家事で負担を感じる</small></div><span class="worry-arrow" aria-hidden="true">›</span></div>
+          <div class="worry-row"><span class="worry-number">02</span><div><strong>腰まわりの不安</strong><small>立ち上がりや同じ姿勢がつらい</small></div><span class="worry-arrow" aria-hidden="true">›</span></div>
+          <div class="worry-row"><span class="worry-number">03</span><div><strong>膝・足の動かしづらさ</strong><small>歩くことや階段に不安がある</small></div><span class="worry-arrow" aria-hidden="true">›</span></div>
+          <div class="worry-row"><span class="worry-number">04</span><div><strong>どこへ相談すべきか迷う</strong><small>原因がわからず、対応に困っている</small></div><span class="worry-arrow" aria-hidden="true">›</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="concept" aria-labelledby="concept-title">
+      <div class="container concept-grid">
+        <div class="concept-sticky reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Our approach</p>
+            <h2 id="concept-title">急がず、<br>置き去りにせず。</h2>
+            <p>身体の状態だけでなく、仕事や家事、休み方まで含めて考える。それが私たちの目指す向き合い方です。</p>
+          </div>
+        </div>
+        <div class="concept-copy reveal">
+          <article class="concept-point"><b>POINT 01</b><h3>わかりやすい説明</h3><p>専門用語に偏らず、今わかっていることと今後の考え方を共有します。疑問を残したまま進めないことを大切にします。</p></article>
+          <article class="concept-point"><b>POINT 02</b><h3>状態に合わせた提案</h3><p>同じ「肩がつらい」でも生活背景は違います。一律の対応ではなく、お身体とご希望を踏まえて方針を考えます。</p></article>
+          <article class="concept-point"><b>POINT 03</b><h3>無理のない継続</h3><p>続けられない計画では意味がありません。生活の中に取り入れやすいセルフケアや過ごし方も一緒に検討します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" aria-labelledby="care-title">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <p class="eyebrow">Care menu</p>
+          <h2 id="care-title">ご相談いただける内容</h2>
+          <p>下記は仮の掲載内容です。正式な施術メニュー・料金・保険の取り扱いは、院の方針が確定後に更新します。</p>
+        </div>
+        <div class="care-list reveal">
+          <article class="care-item"><h3>首・肩まわり</h3><p>日常生活や仕事中に感じる首・肩まわりの不調について、状態を確認しながらご相談を承ります。</p></article>
+          <article class="care-item"><h3>腰まわり</h3><p>立つ・座る・かがむといった日常動作で気になる腰まわりの不安についてお話を伺います。</p></article>
+          <article class="care-item"><h3>膝・足まわり</h3><p>歩行や階段、運動時などに感じる膝・足まわりの困りごとについて、無理のない方向を一緒に考えます。</p></article>
+          <article class="care-item"><h3>日常の身体ケア</h3><p>大きな不調になる前の身体のメンテナンスや、日常で気をつけたいことについてもご相談ください。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="flow" aria-labelledby="flow-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">First visit</p>
+          <h2 id="flow-title">はじめての方へ</h2>
+          <p>ご来院時の基本的な流れです。正式な運用が決まり次第、所要時間なども追記します。</p>
+        </div>
+        <div class="flow reveal">
+          <article class="flow-step"><b>STEP 01</b><h3>受付</h3><p>ご予約内容を確認し、現在のお悩みについて簡単にご記入いただきます。</p></article>
+          <article class="flow-step"><b>STEP 02</b><h3>聞き取り</h3><p>困っていることや生活の中で気になる場面を、丁寧にお伺いします。</p></article>
+          <article class="flow-step"><b>STEP 03</b><h3>状態確認</h3><p>動きや状態を確認し、考えられる方針をわかりやすくお伝えします。</p></article>
+          <article class="flow-step"><b>STEP 04</b><h3>施術・ご案内</h3><p>内容にご納得いただいたうえで進め、今後の過ごし方をご案内します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="faq" aria-labelledby="faq-title">
+      <div class="narrow">
+        <div class="section-heading center reveal">
+          <p class="eyebrow">Frequently asked questions</p>
+          <h2 id="faq-title">よくある質問</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details><summary>予約は必要ですか？</summary><div class="faq-answer">予約方法を含む運用は現在準備中です。確定後、このページに電話・LINEなどの窓口を掲載します。</div></details>
+          <details><summary>どのような服装で行けばよいですか？</summary><div class="faq-answer">動きやすい服装がおすすめです。お着替えの用意については、院の設備が確定後に掲載します。</div></details>
+          <details><summary>健康保険は使えますか？</summary><div class="faq-answer">健康保険の適用は負傷原因や状態などによって異なります。正式な取り扱い方針が決まり次第、正確な情報を掲載します。</div></details>
+          <details><summary>料金はいくらですか？</summary><div class="faq-answer">料金表は現在調整中です。公開前に施術内容とあわせて、わかりやすくご案内します。</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contact & access</p>
+          <h2 id="contact-title">お問い合わせ情報は<br>現在準備中です。</h2>
+          <p>電話番号・LINE・詳しい住所・診療時間が確定次第、このページからすぐに確認できるよう更新します。</p>
+          <div class="contact-actions">
+            <span class="button button-disabled" aria-disabled="true">LINE予約 準備中</span>
+            <span class="button button-light button-disabled" aria-disabled="true">電話番号 準備中</span>
+          </div>
+        </div>
+        <dl class="clinic-info reveal" id="clinic-info">
+          <div><dt>院名</dt><dd>田島二丁目の整骨院（仮称）</dd></div>
+          <div><dt>所在地</dt><dd>田島二丁目／詳細住所は準備中</dd></div>
+          <div><dt>診療時間</dt><dd>準備中</dd></div>
+          <div><dt>休診日</dt><dd>準備中</dd></div>
+          <div><dt>予約方法</dt><dd>準備中</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>田島二丁目の整骨院</strong>
+    <p>このページは制作途中の仮公開版です。</p>
+    <p>© <span id="year"></span> Tajima 2-chome Osteopathic Clinic.</p>
+  </footer>
+
+  <div class="mobile-cta" aria-label="固定お問い合わせメニュー">
+    <a class="button button-light" href="#concept">当院について</a>
+    <a class="button" href="#contact">お問い合わせ</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -30px' });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    }
+
+    document.querySelectorAll('details').forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        document.querySelectorAll('details[open]').forEach((other) => {
+          if (other !== item) other.removeAttribute('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
