@@ -24,13 +24,16 @@
 
 ## 画像差し替え枠
 
-- `empathy`: 悩み・共感訴求
-- `approach`: 手技・機器などのアプローチ紹介
-- `benefit`: 施術後の未来イメージ
+- `approach`: 施術アプローチ紹介
 - `access`: 外観・アクセス
 - `youtube`: 院長メッセージ（YouTube）
 
-ヒーローのみ、既存の `assets/images/hero-consultation.webp` を仮使用しています。
+## 実装済み画像
+
+- `hero-core-balance.png`: ヒーロー
+- `empathy-concerns.png`: 「こんなお悩みありませんか？」
+- `problem-progression.png`: 不調を放置した場合の問題提起
+- `future-benefits.png`: 「こんな未来が待っています！」
 
 ## 実装済み動画
 
