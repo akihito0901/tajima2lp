@@ -8,6 +8,9 @@
   <meta name="theme-color" content="#2c4a5a">
   <title>コアバランス整体｜田島二丁目の整骨院（仮称）</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%235a8ba3'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='white'%3E田%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('js');</script>
   <style>
     :root { --cream:#f7fbfe; --blue-100:#eaf4f8; --blue-200:#b5d5e2; --blue-300:#9dc6d8; --blue-500:#5a8ba3; --blue-700:#2c4a5a; --ink:#1e3a47; --muted:#637984; --coral:#d9736e; --line:rgba(90,139,163,.24); --line-green:#06c755; --shadow:0 18px 48px rgba(30,58,71,.14); }
@@ -32,13 +35,27 @@
     .clinic-info{margin:28px 0 0;border-top:1px solid var(--line)}.clinic-info div{display:grid;grid-template-columns:82px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}.clinic-info dt{color:var(--muted)}.clinic-info dd{margin:0;font-weight:700}footer{padding:38px 24px 100px;color:rgba(255,255,255,.58);background:var(--blue-700);text-align:center;font-size:11px}footer strong{display:block;margin-bottom:8px;color:#fff;font-size:15px}
     .availability{padding:58px 24px;color:var(--ink);background:var(--cream);text-align:center;border-top:4px solid var(--blue-300)}.campaign-badge{display:inline-block;margin-bottom:20px;padding:8px 15px;border-radius:999px;color:#fff;background:var(--blue-500);font-size:11px;font-weight:900;letter-spacing:.08em}.campaign-date{margin-bottom:8px;color:var(--blue-500);font-size:18px;font-weight:900}.availability h2{margin-bottom:18px;font-size:28px;line-height:1.45}.free-price{margin:25px 0;color:var(--coral);font-weight:900}.free-price small{display:block;color:var(--muted);font-size:12px}.free-price strong{font-size:62px;line-height:1}.limit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:28px 0;background:var(--line)}.limit-grid div{padding:18px 8px;background:#fff;font-size:11px;font-weight:800}.limit-grid b{display:block;color:var(--blue-500);font-size:27px}.availability-note{margin-bottom:25px;color:var(--muted);font-size:11px}.availability .button{margin-top:20px}
     .sticky-cta{position:fixed;z-index:100;right:0;bottom:0;left:0;padding:8px 12px max(8px,env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,255,255,.95);backdrop-filter:blur(12px)}.sticky-cta-inner{display:grid;width:min(100%,436px);margin:auto}.sticky-cta .button{min-height:54px;border-radius:999px;font-size:13px}
-    .reveal{opacity:1;transform:none}.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.js .reveal.visible{opacity:1;transform:none}@media (min-width:720px){body{padding-top:24px}.page{border-radius:18px 18px 0 0}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}}
+    .reveal{opacity:1;transform:none}.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease-out,transform .7s ease-out}.js .reveal.visible{opacity:1;transform:none}
+
+    /* 平成よしずみLPと同じタイポグラフィ・幅・余白 */
+    body{background:var(--cream);font-family:"Noto Sans JP",sans-serif;line-height:1.75;padding-bottom:80px}
+    .page{width:100%;max-width:448px;margin:0 auto;border-radius:0;box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+    .site-header{position:fixed;top:0;left:50%;z-index:50;width:100%;max-width:448px;min-height:49px;transform:translateX(-50%);padding:8px 12px;background:rgba(255,255,255,.95);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    .brand small{display:none}.brand strong{color:var(--blue-700);font-size:18px;font-weight:900;letter-spacing:-.05em}.header-chip{padding:6px 12px;color:#fff;background:var(--blue-500);font-size:11px;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+    .section{padding:56px 20px}.section h2{font-size:24px;line-height:1.75}.section-label{margin-bottom:16px;font-size:10px;letter-spacing:.3em}
+    .hero-art{padding-top:0}.features-section{padding:56px 0 0;background:var(--cream)}.features-header{padding:0 20px 32px}.features-header h2{font-size:24px;line-height:1.75}.feature-copy{padding:28px 20px 32px}.feature h3{font-size:18px;line-height:1.45}.feature p{font-size:14px;line-height:1.75}
+    .solution{padding:0;background:var(--blue-200)}.solution-copy{padding:56px 20px 24px}.solution-copy h2{margin-bottom:16px}.solution-copy .lead{margin-bottom:0}.solution-video-wrap{padding:0 20px 24px}.solution-video{height:288px;margin:0;border-radius:16px;box-shadow:0 10px 24px rgba(30,58,71,.18)}.solution-video video{width:100%;height:100%;object-fit:cover}.solution-details{padding:32px 20px}.solution-details .director{margin:0 0 20px}.youtube-slot{margin-top:20px}.solution-result{margin:20px 0 0;padding:12px 0;border-top:1px solid rgba(90,139,163,.3);color:var(--blue-700);font-size:16px;font-weight:900;text-align:center}
+    .benefit-cta{padding:40px 20px;background:#fff;text-align:center}.benefit-cta p{max-width:320px;margin:0 auto 32px;color:var(--blue-700);font-size:16px;font-weight:700;line-height:1.75}.benefit-cta em{color:var(--blue-500);font-style:normal;border-bottom:1px solid var(--blue-500)}
+    .line-cta{width:100%;padding:0 16px}.line-cta-button{position:relative;display:block;width:100%;overflow:hidden;padding:20px 12px;border-radius:12px;color:#fff;background:linear-gradient(145deg,#06c755,#04a044);box-shadow:0 10px 30px rgba(6,199,85,.4);font-weight:700;text-align:center}.line-cta-label{display:inline-block;padding:2px 12px;border-radius:999px;background:rgba(0,0,0,.2);font-size:10px;letter-spacing:.12em}.line-cta-main{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:4px}.line-mark{display:grid;width:38px;height:38px;place-items:center;border-radius:50%;color:#06c755;background:#fff;font-size:10px;font-weight:900}.line-cta-main strong{font-size:17px;font-weight:900;line-height:1.35;letter-spacing:-.03em}.line-cta-note{display:block;margin-top:4px;font-size:10px;opacity:.8}.line-shine{position:absolute;top:0;bottom:0;left:-25%;width:25%;transform:skewX(12deg);background:rgba(255,255,255,.18);animation:line-shine 3.2s ease-in-out infinite}@keyframes line-shine{0%,55%{left:-25%}85%,100%{left:125%}}
+    .availability{padding:48px 24px 44px;background:var(--cream);border-top:4px solid var(--blue-300)}.campaign-badge{margin-bottom:24px;padding:8px 16px;font-size:12px;letter-spacing:.12em;box-shadow:0 6px 18px rgba(90,139,163,.28)}.campaign-date{margin-bottom:8px;font-size:18px}.availability h2{margin-bottom:14px;font-size:24px;line-height:1.7}.free-price{margin:0 0 28px}.free-price strong{font-size:68px}.limit-grid{max-width:320px;margin:0 auto 28px;border-top:1px solid rgba(157,198,216,.6);border-bottom:1px solid rgba(157,198,216,.6);background:transparent}.limit-grid div{padding:20px 8px;background:transparent}.limit-grid b{font-size:24px}.availability-note{margin-bottom:28px;font-size:12px}
+    .final-offer{position:relative;min-height:70vh;overflow:hidden;color:#fff}.final-offer-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.final-offer::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.52),rgba(0,0,0,.18),transparent),linear-gradient(0deg,rgba(0,0,0,.55),transparent 58%,rgba(0,0,0,.2))}.final-offer-inner{position:relative;z-index:2;display:flex;min-height:70vh;flex-direction:column;justify-content:space-between;padding:40px 24px 32px}.final-offer-kicker{margin-bottom:12px;color:rgba(255,255,255,.72);font-size:12px;letter-spacing:.08em}.final-offer h2{margin-bottom:12px;font-size:24px;font-weight:900;line-height:1.45;text-shadow:0 2px 6px rgba(0,0,0,.5)}.offer-badge{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--blue-500);font-size:10px;font-weight:700;letter-spacing:.08em}.offer-price-label{display:inline-block;margin-bottom:12px;padding:4px 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(255,255,255,.2);font-size:10px;font-weight:700}.offer-price{font-size:52px;font-weight:900;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,.4)}.offer-price small{font-size:24px}.offer-note{margin:8px 0 0;color:rgba(255,255,255,.55);font-size:10px}.final-line{padding:56px 0 80px;background:#fff;text-align:center}.final-line h2{margin:0 20px 24px;color:var(--blue-700);font-size:20px;line-height:1.75}
+    footer{padding:40px 20px 112px;font-size:12px}.sticky-cta{padding:8px;background:rgba(255,255,255,.95);box-shadow:0 -5px 20px rgba(0,0,0,.08)}.sticky-cta-inner{display:flex;width:100%;max-width:448px;gap:8px}.sticky-action{display:flex;min-height:56px;flex:1;align-items:center;justify-content:center;border-radius:999px;color:#fff;font-size:13px;font-weight:700;line-height:1.25;text-align:center;box-shadow:0 4px 8px rgba(0,0,0,.13)}.sticky-action.phone{background:#d9736e}.sticky-action.line{background:#06c755}.sticky-icon{margin-right:7px;font-size:18px}
+    @media (min-width:768px){body{padding-top:0}.page{margin-top:32px;margin-bottom:32px}.site-header{top:32px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}.line-shine{animation:none}}
   </style>
 </head>
 <body>
   <main class="page" id="top">
-    <div class="draft-bar">現在制作中です。院名・施術内容・料金・予約方法などは正式決定後に更新します。</div>
-    <header class="site-header"><div class="brand"><small>TAJIMA 2-CHOME</small><strong>田島二丁目の整骨院（仮称）</strong></div><a class="header-chip" href="#access">院情報を見る</a></header>
+    <header class="site-header"><div class="brand"><strong>田島二丁目の整骨院（仮称）</strong></div><span class="header-chip">ご予約準備中</span></header>
 
     <section class="hero-art" aria-label="コアバランス整体のご案内">
       <h1 class="sr-only">身体の土台から整えるコアバランス整体</h1>
@@ -52,26 +69,6 @@
       <img src="./assets/images/problem-progression.png" alt="痛みや姿勢の崩れを放置すると日常生活がつらくなる可能性があります" width="941" height="1672" loading="lazy">
     </section>
 
-    <section class="section solution section-blue reveal" aria-labelledby="solution-title">
-      <div class="solution-copy"><span class="section-label">OUR APPROACH</span><h2 id="solution-title">繰り返す不調こそ、<br><span class="accent">今、早めのケア</span>を。</h2><p class="lead">同じ場所に不調を感じていても、生活習慣や身体の使い方は一人ひとり違います。お話を伺い、動きや状態を確認したうえで、身体の土台から整えるコアバランス整体をご提案します。</p></div>
-      <div class="video-frame flush"><video muted loop playsinline preload="none" poster="./assets/images/solution-core-care-poster.jpg" data-autoplay aria-label="コアバランス整体の施術イメージ"><source data-src="./assets/images/solution-core-care.mp4" type="video/mp4"></video></div>
-      <div class="director"><div class="avatar">人物画像<br>準備中</div><div><strong>担当者プロフィール準備中</strong><small>資格・経歴は確認後に掲載します</small></div></div>
-      <p class="message">目の前のつらさだけにとらわれず、日常のどんな場面で困っているのかまで丁寧にお聞きします。不安や疑問を置き去りにせず、納得して受けられるケアを大切にします。</p>
-      <div class="media-slot youtube-slot" data-image-slot="youtube"><span>院長メッセージ動画 準備中<small>YouTube完成後に差し替えます</small></span></div>
-    </section>
-
-    <section class="section section-deep reveal" aria-labelledby="approach-title">
-      <span class="section-label">CORE VALUES</span><h2 id="approach-title">田島二丁目で目指す<br><span class="accent">3つの身体ケア</span></h2>
-      <div class="approach-list"><article class="approach-item"><h3>丁寧なカウンセリング</h3><p>いつから、どんな動作で気になるのかを伺い、日常生活の背景も含めて状態を整理します。</p></article><article class="approach-item"><h3>状態に合わせたご提案</h3><p>決まった流れを当てはめるのではなく、その日の状態やご希望に合わせて無理のない方針を考えます。</p></article><article class="approach-item"><h3>わかりやすい説明</h3><p>専門用語に偏らず、確認できたことや今後の考え方を共有し、納得いただいてから進めます。</p></article></div>
-    </section>
-    <div class="media-slot tall reveal" data-image-slot="approach"><span>アプローチ紹介画像 差し替え予定<small>参考LP「手技・機器」セクション相当</small></span></div>
-
-    <section class="image-section reveal" aria-label="こんな未来が待っています">
-      <img src="./assets/images/future-benefits.png" alt="朝の目覚め、痛みや疲れ、デスクワーク、集中力、日常生活について期待できる未来" width="941" height="1672" loading="lazy">
-    </section>
-
-    <section class="cta-block reveal" aria-labelledby="mid-cta-title"><h2 id="mid-cta-title">まずは今のお悩みを<br>お聞かせください。</h2><p>予約方法・受付開始日は、正式決定後にこちらでご案内します。</p><span class="button" aria-disabled="true">LINEでのご相談は準備中</span></section>
-
     <section class="features-section section-blue reveal" aria-labelledby="features-title">
       <div class="features-header"><span class="section-label">4 REASONS</span><h2 id="features-title">当院が選ばれる<br><span class="accent">4つの理由</span></h2></div>
       <article class="feature"><div class="feature-media"><video muted loop playsinline preload="none" poster="./assets/images/feature-core-balance-poster.jpg" data-autoplay aria-label="コアバランスアプローチの施術風景"><source data-src="./assets/images/feature-core-balance.mp4" type="video/mp4"></video><span class="feature-num">01</span></div><div class="feature-copy"><h3>独自の「コアバランス」アプローチ</h3><p>気になる部分だけを見るのではなく、身体の軸となる体幹や骨盤、姿勢と動きのつながりを確認。身体全体のバランスを考え、一人ひとりの状態に合わせて整えます。</p></div></article>
@@ -80,7 +77,25 @@
       <article class="feature"><div class="feature-media"><video muted loop playsinline preload="none" poster="./assets/images/feature-clinic-poster.jpg" data-autoplay aria-label="院内イメージ動画"><source data-src="./assets/images/feature-clinic.mp4" type="video/mp4"></video><span class="feature-num">04</span></div><div class="feature-copy"><h3>清潔で新しい院内<br>落ち着いて過ごせる空間</h3><p>新しい院内で、安心してご相談いただける環境を整えます。内装完成後に正式な院内写真・動画へ差し替える予定です。</p></div></article>
     </section>
 
-    <section class="section reveal" aria-labelledby="voice-title"><span class="section-label">VOICE</span><h2 id="voice-title">ご利用者さまの声</h2><p class="voice-intro">実際の掲載許可をいただいた内容を、オープン後に順次ご紹介します。</p><div class="voice-slots"><div class="voice-slot">お声・写真 差し替え予定 01</div><div class="voice-slot">お声・写真 差し替え予定 02</div><div class="voice-slot">お声・写真 差し替え予定 03</div></div></section>
+    <section class="solution reveal" aria-labelledby="solution-title">
+      <div class="solution-copy"><h2 id="solution-title">繰り返す不調こそ、<br>今、早めのケアを。<br><span class="accent">「コアバランス整体」</span>が<br>身体の土台から整えます。</h2></div>
+      <div class="solution-video-wrap"><div class="video-frame solution-video"><video muted loop playsinline preload="none" poster="./assets/images/solution-core-care-poster.jpg" data-autoplay aria-label="コアバランス整体の施術イメージ"><source data-src="./assets/images/solution-core-care.mp4" type="video/mp4"></video></div></div>
+      <div class="solution-details">
+        <div class="director"><div class="avatar">人物画像<br>準備中</div><div><strong>担当者プロフィール準備中</strong><small>国家資格保有・施術歴10年</small></div></div>
+        <p class="message">目の前のつらさだけでなく、日常のどんな場面で困っているのかまで丁寧にお聞きします。不安や疑問を置き去りにせず、納得して受けられるケアを大切にします。</p>
+        <div class="media-slot youtube-slot" data-image-slot="youtube"><span>院長メッセージ動画 準備中<small>YouTube完成後に差し替えます</small></span></div>
+        <p class="solution-result">そうすることで<br>「繰り返す不調や乱れ」を<br><span class="accent">身体の土台から整えます。</span></p>
+      </div>
+    </section>
+
+    <section class="image-section reveal" aria-label="こんな未来が待っています">
+      <img src="./assets/images/future-benefits.png" alt="朝の目覚め、痛みや疲れ、デスクワーク、集中力、日常生活について期待できる未来" width="941" height="1672" loading="lazy">
+    </section>
+
+    <section class="benefit-cta reveal" aria-label="初回無料体験のご案内">
+      <p>この未来を手に入れるために、<br>まずは<em>初回無料体験</em>で<br>その違いをお確かめください。</p>
+      <div class="line-cta"><span class="line-cta-button" aria-disabled="true"><span class="line-shine"></span><span class="line-cta-label">＼ 24時間受付・LINEで完結 ／</span><span class="line-cta-main"><span class="line-mark">LINE</span><strong>今すぐLINEで<br>空き状況を確認する</strong></span><span class="line-cta-note">※予約受付は現在準備中です</span></span></div>
+    </section>
 
     <section class="section section-blue reveal" aria-labelledby="faq-title">
       <span class="section-label">FAQ</span><h2 id="faq-title">よくあるご質問</h2>
@@ -88,24 +103,23 @@
     </section>
 
     <section class="availability reveal" aria-labelledby="availability-title">
-      <span class="campaign-badge">OPENING CAMPAIGN</span>
-      <p class="campaign-date">10月1日〜10月10日</p>
-      <h2 id="availability-title">コアバランス整体<br>初回施術無料</h2>
-      <div class="free-price"><small>オープン記念・初回限定</small><strong>0</strong>円</div>
-      <div class="limit-grid"><div><b>1日8名</b>限定</div><div><b>合計80名</b>先着順</div></div>
-      <p class="availability-note">定員に達し次第、受付を終了します。<br>予約開始まで、もうしばらくお待ちください。</p>
-      <span class="button" aria-disabled="true">無料体験の予約受付は準備中</span>
+      <span class="campaign-badge">10月1日〜10月10日</span>
+      <h2 id="availability-title">オープン記念<br>コアバランス整体<br><span class="accent">初回施術無料</span></h2>
+      <div class="free-price"><small>合計80名様・先着順</small><strong>80</strong>名</div>
+      <div class="limit-grid"><div><b>1日8名</b>限定</div><div><b>10日間</b>限定開催</div></div>
+      <p class="availability-note">定員に達し次第、受付を終了します。<br><strong>ご予約はお早めに。</strong></p>
+      <div class="line-cta"><span class="line-cta-button" aria-disabled="true"><span class="line-shine"></span><span class="line-cta-label">＼ 24時間受付・LINEで完結 ／</span><span class="line-cta-main"><span class="line-mark">LINE</span><strong>今すぐLINEで<br>空き状況を確認する</strong></span><span class="line-cta-note">※予約受付は現在準備中です</span></span></div>
     </section>
 
-    <section class="section reveal" id="access" aria-labelledby="access-title">
-      <span class="section-label">CLINIC INFORMATION</span><h2 id="access-title">院情報</h2><p class="lead">正式な住所・受付時間・予約方法は、確定後に更新します。</p><div class="media-slot flush" data-image-slot="access"><span>外観・アクセス画像 差し替え予定</span></div>
-      <dl class="clinic-info"><div><dt>院名</dt><dd>田島二丁目の整骨院（仮称）</dd></div><div><dt>所在地</dt><dd>田島二丁目／詳細住所は準備中</dd></div><div><dt>受付時間</dt><dd>準備中</dd></div><div><dt>休診日</dt><dd>準備中</dd></div><div><dt>電話番号</dt><dd>準備中</dd></div><div><dt>LINE予約</dt><dd>準備中</dd></div></dl>
+    <section class="final-offer reveal" aria-labelledby="final-cta-title">
+      <img class="final-offer-bg" src="./assets/images/solution-core-care-poster.jpg" alt="" width="960" height="1154" loading="lazy">
+      <div class="final-offer-inner"><div><p class="final-offer-kicker">＼ 本気で変えたい方へ ／</p><h2 id="final-cta-title">身体の土台を整え<br>動ける身体を<br>取り戻しましょう。</h2><span class="offer-badge">オープン記念・先着80名様</span></div><div><span class="offer-price-label">10月1日〜10日・初回限定</span><div class="offer-price">0<small>円</small></div><p class="offer-note">※定員に達し次第、受付を終了します。</p></div></div>
     </section>
 
-    <section class="cta-block reveal" aria-labelledby="final-cta-title"><span class="eyebrow">10.1 - 10.10 / OPENING CAMPAIGN</span><h2 id="final-cta-title">身体の悩みを我慢せず、<br>まずは無料体験から。</h2><p>先着80名様限定。ご予約受付の開始まで、もうしばらくお待ちください。</p><span class="button" aria-disabled="true">無料体験をLINEで予約（準備中）</span></section>
-    <footer><strong>田島二丁目の整骨院（仮称）</strong><span>正式情報は準備が整い次第公開します。</span><p>© Tajima 2-chome Seikotsuin.</p></footer>
+    <section class="final-line reveal"><h2>初回無料体験のご予約は<br><span class="accent">LINEから24時間受付</span></h2><div class="line-cta"><span class="line-cta-button" aria-disabled="true"><span class="line-shine"></span><span class="line-cta-label">＼ 24時間受付・LINEで完結 ／</span><span class="line-cta-main"><span class="line-mark">LINE</span><strong>今すぐLINEで<br>空き状況を確認する</strong></span><span class="line-cta-note">※予約受付は現在準備中です</span></span></div></section>
+    <footer><strong>田島二丁目の整骨院（仮称）</strong><span>2026年10月 オープン予定</span><p>© Tajima 2-chome Seikotsuin.</p></footer>
   </main>
-  <div class="sticky-cta" aria-label="固定お問い合わせ案内"><div class="sticky-cta-inner"><span class="button" aria-disabled="true">初回無料体験を予約（準備中）</span></div></div>
+  <div class="sticky-cta" aria-label="固定お問い合わせ案内"><div class="sticky-cta-inner"><span class="sticky-action phone" aria-disabled="true"><span class="sticky-icon">☎</span>電話予約<br>準備中</span><span class="sticky-action line" aria-disabled="true"><span class="sticky-icon">LINE</span>空き状況を<br>今すぐ確認</span></div></div>
   <script>
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const targets=document.querySelectorAll('.reveal');
