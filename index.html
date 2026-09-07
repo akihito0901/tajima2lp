@@ -70,6 +70,20 @@
     .final-offer::before{background:linear-gradient(90deg,rgba(31,55,36,.76),rgba(31,55,36,.32),transparent),linear-gradient(0deg,rgba(31,55,36,.72),transparent 58%,rgba(31,55,36,.24))}
     .offer-badge{background:var(--blue-500)}.offer-price{font-size:41px;line-height:1.25;letter-spacing:.02em}.offer-price small{display:block;margin-top:4px;font-size:28px;letter-spacing:.18em}.offer-note{color:rgba(255,255,255,.72)}
     footer{background:var(--blue-700)}.sticky-action.phone{background:#76906a}.sticky-action.line{background:#06c755}
+    /* オープン記念キャンペーン：一枚のイベントポスターとして再設計 */
+    .availability{padding:0;border:0;background:#f7f5eb;text-align:center}
+    .availability::before,.availability::after{display:none}
+    .campaign-hero{position:relative;overflow:hidden;padding:58px 24px 66px;color:#fff;background:radial-gradient(circle at 88% 12%,rgba(205,224,167,.19) 0 19%,transparent 19.5%),radial-gradient(circle at 4% 82%,rgba(255,255,255,.09) 0 26%,transparent 26.5%),linear-gradient(155deg,#294932 0%,#3f6846 58%,#567b50 100%)}
+    .campaign-hero::before{content:"";position:absolute;top:-78px;right:-74px;width:210px;height:210px;border:1px solid rgba(226,237,199,.35);border-radius:50%;box-shadow:0 0 0 22px rgba(226,237,199,.05),0 0 0 54px rgba(226,237,199,.035)}
+    .campaign-hero::after{content:"";position:absolute;right:-40px;bottom:22px;width:140px;height:72px;border-top:1px solid rgba(255,255,255,.24);border-radius:50%;transform:rotate(-18deg)}
+    .campaign-topline{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;color:#dbe8bd;font-size:10px;font-weight:900;letter-spacing:.3em}.campaign-topline::before,.campaign-topline::after{content:"";width:34px;height:1px;background:rgba(219,232,189,.6)}
+    .campaign-badge{position:relative;z-index:1;margin-bottom:24px;padding:7px 18px;border:1px solid rgba(255,255,255,.28);background:rgba(21,51,29,.42);box-shadow:none;font-size:12px;letter-spacing:.1em}
+    .availability .campaign-hero h2{position:relative;z-index:1;margin:0;color:#fff;font-size:25px;font-weight:700;line-height:1.5;letter-spacing:.02em}.campaign-service{display:block;font-size:30px;font-weight:900;letter-spacing:-.04em}.campaign-free{position:relative;display:inline-block;margin-top:10px;color:#eff3cb;font-size:42px;font-style:normal;font-weight:900;line-height:1.35;letter-spacing:-.05em}.campaign-free::after{content:"";position:absolute;right:-6px;bottom:1px;left:-6px;height:7px;border-radius:99px;background:rgba(218,196,108,.55);transform:rotate(-1deg);z-index:-1}
+    .campaign-message{position:relative;z-index:1;margin:20px auto 24px;color:rgba(255,255,255,.76);font-size:12px;line-height:1.8}
+    .campaign-capacity{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;line-height:1}.campaign-capacity span{align-self:center;margin-right:9px;padding:5px 8px;border:1px solid rgba(255,255,255,.46);border-radius:999px;font-size:11px;font-weight:800}.campaign-capacity strong{color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:88px;font-weight:700;letter-spacing:-.08em;text-shadow:0 8px 22px rgba(20,48,27,.3)}.campaign-capacity b{margin:0 0 13px 7px;color:#eff3cb;font-size:18px}.campaign-capacity small{margin:0 0 13px 6px;color:rgba(255,255,255,.68);font-size:10px}
+    .campaign-details{position:relative;padding:42px 24px 54px;background:#f7f5eb}.campaign-details::before{content:"";position:absolute;top:-16px;left:50%;width:32px;height:32px;transform:translateX(-50%) rotate(45deg);background:#f7f5eb}
+    .campaign-details .limit-grid{display:flex;align-items:center;max-width:330px;margin:0 auto 28px;padding:18px 0;border:0;border-top:1px solid rgba(54,84,60,.28);border-bottom:1px solid rgba(54,84,60,.28);background:transparent}.campaign-details .limit-grid div{flex:1;padding:0;background:transparent}.campaign-details .limit-grid div+div{border-left:0}.campaign-details .limit-grid small{display:block;margin-bottom:4px;color:var(--blue-500);font-size:9px;font-weight:900;letter-spacing:.18em}.campaign-details .limit-grid b{display:block;color:var(--blue-700);font-size:24px;line-height:1.3}.campaign-details .limit-grid span{font-size:10px;font-weight:700}.limit-cross{flex:0 0 auto!important;color:var(--blue-300);font-family:Georgia,serif;font-size:25px}
+    .campaign-details .availability-note{margin-bottom:28px;font-size:12px;line-height:1.8}.campaign-details .availability-note strong{display:block;margin-top:4px;color:var(--blue-700);font-size:18px}.campaign-details .line-cta{padding:0}
     @media (min-width:768px){body{padding-top:0}.page{margin-top:32px;margin-bottom:32px}.site-header{top:32px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}.line-shine{animation:none}}
   </style>
 </head>
@@ -127,12 +141,18 @@
     </section>
 
     <section class="availability reveal" aria-labelledby="availability-title">
-      <span class="campaign-badge">10月1日〜10月10日</span>
-      <h2 id="availability-title">オープン記念<br>コアバランス整体<br><span class="accent">初回施術無料</span></h2>
-      <div class="free-price"><small>合計80名様・先着順</small><strong>80</strong>名</div>
-      <div class="limit-grid"><div><b>1日8名</b>限定</div><div><b>10日間</b>限定開催</div></div>
-      <p class="availability-note">定員に達し次第、受付を終了します。<br><strong>ご予約はお早めに。</strong></p>
-      <div class="line-cta"><a class="line-cta-button" href="https://lin.ee/QbM8YQy"><span class="line-shine"></span><span class="line-cta-label">＼ 24時間受付・LINEで完結 ／</span><span class="line-cta-main"><span class="line-mark">LINE</span><strong>今すぐLINEで<br>空き状況を確認する</strong></span><span class="line-cta-note">タップしてLINE予約へ進む</span></a></div>
+      <div class="campaign-hero">
+        <span class="campaign-topline">OPENING CAMPAIGN</span>
+        <span class="campaign-badge">10月1日〜10月10日</span>
+        <h2 id="availability-title">オープン記念<span class="campaign-service">コアバランス整体</span><em class="campaign-free">初回施術無料</em></h2>
+        <p class="campaign-message">身体を見直すきっかけを、<br>もっと気軽に体験していただくために。</p>
+        <div class="campaign-capacity"><span>先着</span><strong>80</strong><b>名様</b><small>限定</small></div>
+      </div>
+      <div class="campaign-details">
+        <div class="limit-grid"><div><small>PER DAY</small><b>1日8名</b><span>限定</span></div><div class="limit-cross" aria-hidden="true">×</div><div><small>PERIOD</small><b>10日間</b><span>限定開催</span></div></div>
+        <p class="availability-note">定員に達し次第、受付を終了します。<strong>ご予約はお早めに。</strong></p>
+        <div class="line-cta"><a class="line-cta-button" href="https://lin.ee/QbM8YQy"><span class="line-shine"></span><span class="line-cta-label">＼ 24時間受付・LINEで完結 ／</span><span class="line-cta-main"><span class="line-mark">LINE</span><strong>今すぐLINEで<br>空き状況を確認する</strong></span><span class="line-cta-note">タップしてLINE予約へ進む</span></a></div>
+      </div>
     </section>
 
     <section class="final-offer reveal" aria-labelledby="final-cta-title">
