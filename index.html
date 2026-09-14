@@ -97,15 +97,27 @@
        YouTubeのiframeをそのまま置くと、再生しない人にも1MB近いプレイヤーJSを
        読ませてしまう。サムネイルだけ先に出し、タップされて初めてiframeを差し込む。
        サムネイルもYouTubeから読まず自前のWebPにして、初期表示で外部通信を起こさない。 */
-    .video-embed{margin-top:24px}
-    .video-embed-btn{position:relative;display:block;width:100%;padding:0;border:0;background:#000;cursor:pointer;line-height:0}
-    .video-embed-btn img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-    .video-play{position:absolute;top:calc(50% - 28px);left:50%;width:68px;height:48px;transform:translate(-50%,-50%);background:rgba(0,0,0,.62);transition:background .2s ease}
-    .video-play::after{content:"";position:absolute;top:50%;left:53%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff}
-    .video-embed-btn:hover .video-play,.video-embed-btn:focus-visible .video-play{background:#e02d27}
-    .video-embed-cap{display:block;padding:12px 14px;background:var(--blue-700);color:#fff;font-size:13px;font-weight:800;line-height:1.5;text-align:center}
-    .video-embed-cap small{display:block;margin-top:2px;color:rgba(255,255,255,.72);font-size:11px;font-weight:500}
-    .video-embed iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0}
+    .video-embed{margin-top:24px;border:1px solid rgba(113,147,91,.3);background:#fff}
+    /* 16:9 の箱を先に確保しておく。サムネイルとiframeを同じ枠に重ねるので、
+       再生ボタンを押しても高さが変わらない。 */
+    .video-frame16{position:relative;aspect-ratio:16/9;background:#000}
+    .video-frame16>*{position:absolute;inset:0;width:100%;height:100%}
+    .video-embed-btn{display:block;padding:0;border:0;background:#000;cursor:pointer;line-height:0}
+    .video-embed-btn img{width:100%;height:100%;object-fit:cover}
+    .video-frame16 iframe{border:0}
+    /* YouTubeの再生ボタン。ここだけは本家の形と色をそのまま使う。
+       四角い自作ボタンだと「ただの動画」に見えて、YouTubeだと伝わらない。 */
+    .video-play{position:absolute;inset:auto;top:50%;left:50%;width:68px;height:48px;transform:translate(-50%,-50%);background:#f00;border-radius:14%/24%;transition:opacity .2s ease}
+    .video-play::after{content:"";position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff}
+    .video-embed-btn:hover .video-play,.video-embed-btn:focus-visible .video-play{opacity:.85}
+    /* 下のメタ情報。YouTubeのカードに寄せて、SNSでやっている院だと分かるようにする */
+    .video-meta{padding:12px 14px 13px;background:#fff;text-align:left}
+    .yt-badge{display:inline-flex;align-items:center;gap:5px;color:#606060;font-size:10px;font-weight:900;letter-spacing:.02em}
+    .yt-badge-mark{position:relative;display:inline-block;width:20px;height:14px;background:#f00;border-radius:14%/24%}
+    .yt-badge-mark::after{content:"";position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);border-style:solid;border-width:3.5px 0 3.5px 6px;border-color:transparent transparent transparent #fff}
+    .video-title{margin:5px 0 2px;color:var(--ink);font-size:14px;font-weight:900;line-height:1.5}
+    .video-channel{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 10px;margin:0;color:var(--muted);font-size:11.5px}
+    .video-link{color:var(--blue-500);font-size:11.5px;font-weight:800;text-decoration:underline}
 
     /* ── 「コアバランス整体が土台から整えます」のセクション ──
     　　見出しをゴシック900のベタ打ちからホームページと同じ明朝に変え、
@@ -198,7 +210,7 @@
       <div class="solution-details">
         <div class="director"><div class="avatar"><img src="./assets/images/director-profile.webp" alt="田島2丁目の整骨院 院長 古賀達也" width="320" height="320" loading="lazy"></div><p class="director-name"><small>院長</small><strong>古賀 達也</strong><span>柔道整復師（国家資格）／施術歴10年</span></p></div>
         <p class="message">目の前のつらさだけでなく、日常のどんな場面で困っているのかまで丁寧にお聞きします。不安や疑問を置き去りにせず、納得して受けられるケアを大切にします。</p>
-        <div class="video-embed"><button class="video-embed-btn" type="button" data-yt="fcZhYhWQhu4" aria-label="院長からのメッセージ動画を再生する（YouTube）"><img src="./assets/images/director-video-thumb.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="video-play" aria-hidden="true"></span><span class="video-embed-cap">院長からのメッセージ<small>タップで再生します</small></span></button></div>
+        <div class="video-embed"><div class="video-frame16"><button class="video-embed-btn" type="button" data-yt="fcZhYhWQhu4" aria-label="院長からのメッセージ動画をYouTubeで再生する"><img src="./assets/images/director-video-thumb.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="video-play" aria-hidden="true"></span></button></div><div class="video-meta"><span class="yt-badge"><span class="yt-badge-mark" aria-hidden="true"></span>YouTube</span><p class="video-title">院長からのメッセージ</p><p class="video-channel">田島2丁目の整骨院<a class="video-link" href="https://www.youtube.com/watch?v=fcZhYhWQhu4" target="_blank" rel="noopener">YouTubeで見る</a></p></div></div>
         <p class="solution-result">そうすることで<br>「繰り返す不調や乱れ」を<br><span class="accent">身体の土台から整えます。</span></p>
       </div>
     </section>
@@ -258,7 +270,7 @@
         frame.title='院長からのメッセージ';
         frame.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
         frame.allowFullscreen=true;
-        btn.replaceWith(frame);
+        btn.replaceWith(frame);  // 枠(.video-frame16)は残るので大きさは変わらない
       },{once:true});
     });
     const videos=document.querySelectorAll('video[data-autoplay]');
