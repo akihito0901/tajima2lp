@@ -32,7 +32,62 @@
     .features-section{padding:64px 0 0}.features-header{padding:0 24px 28px;text-align:center}.features-header h2{margin:0;font-size:clamp(24px,7vw,31px);line-height:1.55;letter-spacing:-.04em}.feature{padding:0;border-top:1px solid var(--line)}.feature-media{position:relative;width:100%;height:256px;overflow:hidden;background:#cadde5}.feature-media video,.feature-media img{display:block;width:100%;height:100%;object-fit:cover}.feature-num{position:absolute;bottom:16px;left:20px;z-index:2;display:flex;align-items:center;gap:12px;color:var(--blue-200);font-size:30px;font-weight:900;line-height:1;text-shadow:0 2px 8px rgba(30,58,71,.5)}.feature-num::after{content:"";display:block;width:34px;height:2px;background:var(--blue-200);box-shadow:0 2px 6px rgba(30,58,71,.4)}.feature-copy{padding:28px 24px 34px;background:#fff}.feature h3{margin:0 0 12px;font-size:18px;line-height:1.55}.feature p{margin:0;color:var(--muted);font-size:13px}.credential-proof{display:grid;grid-template-columns:1fr 1fr;gap:1px;width:100%;height:256px;margin:0;background:var(--blue-300)}.credential-proof div{display:grid;place-items:center;padding:18px 10px;background:linear-gradient(145deg,#fff,#eaf4f8);text-align:center}.credential-proof strong{display:block;color:var(--blue-500);font-size:27px;line-height:1.25}.credential-proof span{font-size:11px;font-weight:800;line-height:1.5}
     .voice-intro{margin-bottom:0;color:var(--muted);font-size:13px;text-align:center}.voice-slots{display:grid;gap:12px;margin-top:28px}.voice-slot{display:grid;min-height:138px;place-items:center;padding:22px;border:1px dashed var(--blue-300);background:var(--cream);color:var(--blue-500);font-size:12px;font-weight:800;text-align:center}
     .faq{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line)}summary{position:relative;padding:18px 34px 18px 30px;cursor:pointer;font-size:14px;font-weight:800;list-style:none}summary::-webkit-details-marker{display:none}summary::before{content:"Q";position:absolute;left:2px;color:var(--blue-500);font-size:17px}summary::after{content:"+";position:absolute;right:4px;color:var(--blue-300);font-size:20px;font-weight:400}details[open] summary::after{content:"−"}.answer{position:relative;padding:0 6px 20px 30px;color:var(--muted);font-size:13px}.answer::before{content:"A";position:absolute;left:2px;color:var(--blue-300);font-size:17px;font-weight:800}
-    .clinic-info{margin:28px 0 0;border-top:1px solid var(--line)}.clinic-info div{display:grid;grid-template-columns:82px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}.clinic-info dt{color:var(--muted)}.clinic-info dd{margin:0;font-weight:700}footer{padding:38px 24px 100px;color:rgba(255,255,255,.58);background:var(--blue-700);text-align:center;font-size:11px}footer strong{display:block;margin-bottom:8px;color:#fff;font-size:15px}
+    .clinic-info{margin:28px 0 0;border-top:1px solid var(--line)}.clinic-info div{display:grid;grid-template-columns:82px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}.clinic-info dt{color:var(--muted)}.clinic-info dd{margin:0;font-weight:700}footer{padding:38px 24px 100px;color:rgba(255,255,255,.58);background:var(--blue-700);text-align:center;font-size:11px}footer strong{display:block;margin-bottom:8px;color:#fff;font-size:15px}.free-price{margin:25px 0;color:var(--coral);font-weight:900}.free-price small{display:block;color:var(--muted);font-size:12px}.free-price strong{font-size:62px;line-height:1}
+    .sticky-cta{position:fixed;z-index:100;right:0;bottom:0;left:0;padding:8px 12px max(8px,env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,255,255,.95);backdrop-filter:blur(12px)}.sticky-cta-inner{display:grid;width:min(100%,436px);margin:auto}.sticky-cta .button{min-height:54px;border-radius:0;font-size:13px}
+    .reveal{opacity:1;transform:none}.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease-out,transform .7s ease-out}.js .reveal.visible{opacity:1;transform:none}
+
+    /* 平成よしずみLPと同じタイポグラフィ・幅・余白 */
+    body{background:var(--cream);font-family:"Noto Sans JP",sans-serif;line-height:1.75;padding-bottom:80px}
+    .page{width:100%;max-width:448px;margin:0 auto;border-radius:0;box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+    .site-header{position:fixed;top:0;left:50%;z-index:50;width:100%;max-width:448px;min-height:49px;transform:translateX(-50%);padding:8px 12px;background:rgba(255,255,255,.95);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    .brand small{display:none}.brand strong{color:var(--blue-700);font-size:18px;font-weight:900;letter-spacing:-.05em}.header-chip{padding:6px 12px;color:#fff;background:var(--blue-500);font-size:11px;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+    .section{padding:56px 20px}.section h2{font-size:24px;line-height:1.75}.section-label{margin-bottom:16px;font-size:10px;letter-spacing:.3em}
+    .hero-art{padding-top:0}.features-section{padding:56px 0 0;background:var(--cream)}.features-header{padding:0 20px 32px}.features-header h2{font-size:24px;line-height:1.75}.feature-copy{padding:28px 20px 32px}.feature h3{font-size:18px;line-height:1.45}.feature p{font-size:14px;line-height:1.75}
+    .solution{padding:0;background:var(--blue-200)}.solution-copy{padding:56px 20px 24px}.solution-copy h2{margin-bottom:16px}.solution-copy .lead{margin-bottom:0}.solution-video-wrap{padding:0 20px 24px}.solution-video{height:288px;margin:0;border-radius:0;box-shadow:0 10px 24px rgba(30,58,71,.18)}.solution-video video{width:100%;height:100%;object-fit:cover}.solution-details{padding:32px 20px}.solution-details .director{margin:0 0 20px}.youtube-slot{margin-top:20px}.solution-result{margin:20px 0 0;padding:12px 0;border-top:1px solid rgba(90,139,163,.3);color:var(--blue-700);font-size:16px;font-weight:900;text-align:center}
+    .benefit-cta{padding:40px 20px;background:#fff;text-align:center}.benefit-cta p{max-width:320px;margin:0 auto 32px;color:var(--blue-700);font-size:16px;font-weight:700;line-height:1.75}.benefit-cta em{color:var(--blue-500);font-style:normal;border-bottom:1px solid var(--blue-500)}
+    .line-cta{width:100%;padding:0 16px}.line-cta-button{position:relative;display:block;width:100%;overflow:hidden;padding:20px 12px;border-radius:0;color:#fff;background:linear-gradient(145deg,#06c755,#04a044);box-shadow:0 10px 30px rgba(6,199,85,.4);font-weight:700;text-align:center}.line-cta-label{display:inline-block;padding:2px 12px;border-radius:0;background:rgba(0,0,0,.2);font-size:10px;letter-spacing:.12em}.line-cta-main{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:4px}.line-mark{display:grid;width:38px;height:38px;place-items:center;border-radius:50%;color:#06c755;background:#fff;font-size:10px;font-weight:900}.line-cta-main strong{font-size:17px;font-weight:900;line-height:1.35;letter-spacing:-.03em}.line-cta-note{display:block;margin-top:4px;font-size:10px;opacity:.8}.line-shine{position:absolute;top:0;bottom:0;left:-25%;width:25%;transform:skewX(12deg);background:rgba(255,255,255,.18);animation:line-shine 3.2s ease-in-out infinite}@keyframes line-shine{0%,55%{left:-25%}85%,100%{left:125%}}.free-price{margin:0 0 28px}.free-price strong{font-size:68px}
+    .final-offer{position:relative;min-height:70vh;overflow:hidden;color:#fff}.final-offer-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.final-offer::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.52),rgba(0,0,0,.18),transparent),linear-gradient(0deg,rgba(0,0,0,.55),transparent 58%,rgba(0,0,0,.2))}.final-offer-inner{position:relative;z-index:2;display:flex;min-height:70vh;flex-direction:column;justify-content:space-between;padding:40px 24px 32px}.final-offer-kicker{margin-bottom:12px;color:rgba(255,255,255,.72);font-size:12px;letter-spacing:.08em}.final-offer h2{margin-bottom:12px;font-size:24px;font-weight:900;line-height:1.45;text-shadow:0 2px 6px rgba(0,0,0,.5)}.offer-badge{display:inline-block;padding:4px 12px;border-radius:0;background:var(--blue-500);font-size:10px;font-weight:700;letter-spacing:.08em}.offer-price-label{display:inline-block;margin-bottom:12px;padding:4px 12px;border:1px solid rgba(255,255,255,.3);border-radius:0;background:rgba(255,255,255,.2);font-size:10px;font-weight:700}.offer-price{font-size:52px;font-weight:900;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,.4)}.offer-price small{font-size:24px}.offer-note{margin:8px 0 0;color:rgba(255,255,255,.55);font-size:10px}.final-line{padding:56px 0 80px;background:#fff;text-align:center}.final-line h2{margin:0 20px 24px;color:var(--blue-700);font-size:20px;line-height:1.75}
+    footer{padding:40px 20px 112px;font-size:12px}.sticky-cta{padding:8px;background:rgba(255,255,255,.95);box-shadow:0 -5px 20px rgba(0,0,0,.08)}.sticky-cta-inner{display:flex;width:100%;max-width:448px;gap:8px}.sticky-label{display:block;line-height:1.25;text-align:center}
+    .sticky-label b{display:block;font-size:15px;font-weight:900;letter-spacing:0;white-space:nowrap}
+    .sticky-action{display:flex;min-height:56px;flex:1;align-items:center;justify-content:center;border-radius:0;color:#fff;font-size:13px;font-weight:700;line-height:1.25;text-align:center;box-shadow:0 4px 8px rgba(0,0,0,.13)}.sticky-action.phone{background:#d9736e}.sticky-action.line{background:#06c755}.sticky-icon{margin-right:7px;font-size:18px}
+    .line-cta-button,.sticky-action{text-decoration:none}
+    /* ヒーロー画像のくすみグリーンに合わせた統一カラー */
+    body{background:#e8eee3}
+    .feature-media,.video-frame{background:#dce6d3}.video-frame,.solution-video{box-shadow:0 10px 24px rgba(54,84,60,.18)}.credential-proof{background:var(--blue-300)}.credential-proof div{background:linear-gradient(145deg,#fff,#edf3e7)}
+    .line-cta-button{transition:transform .2s ease,box-shadow .2s ease}.line-cta-button:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(6,199,85,.42)}
+    .header-chip{display:flex;align-items:center;gap:5px;background:var(--blue-500)}
+    .solution-copy{text-align:center}
+    .avatar{position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.9);box-shadow:0 5px 16px rgba(54,84,60,.18)}.avatar img{position:absolute;inset:0;width:100%;height:100%!important;max-width:none;object-fit:cover;object-position:50% 38%}
+    .free-price{position:relative;z-index:1;margin:0 0 28px;color:var(--blue-700)}.free-price small{margin-bottom:4px;color:var(--muted);letter-spacing:.08em}.free-price strong{font-size:76px;letter-spacing:-.06em}
+    .final-offer::before{background:linear-gradient(90deg,rgba(31,55,36,.76),rgba(31,55,36,.32),transparent),linear-gradient(0deg,rgba(31,55,36,.72),transparent 58%,rgba(31,55,36,.24))}
+    .offer-badge{background:var(--blue-500)}.offer-price{font-size:41px;line-height:1.25;letter-spacing:.02em}.offer-price small{display:block;margin-top:4px;font-size:28px;letter-spacing:.18em}.offer-note{color:rgba(255,255,255,.72)}
+    footer{background:var(--blue-700)}.sticky-action.phone{background:#76906a}.sticky-action.line{background:#06c755}
+    @media (min-width:768px){body{padding-top:0}.page{margin-top:32px;margin-bottom:32px}.site-header{top:32px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}.line-shine{animation:none}}
+    /* ── 「コアバランス整体が土台から整えます」のセクション ──
+    　　見出しをゴシック900のベタ打ちからホームページと同じ明朝に変え、
+    　　サービス名には緑の帯を敷いて視線を止める。
+    　　院長ブロックは左端に張り付いて中央揃えの他要素から浮いていたので、
+    　　写真を大きくして中央に組み直した。 */
+    .solution-copy h2{margin-bottom:18px;font-family:var(--font-mincho);font-size:clamp(21px,5.6vw,28px);font-weight:700;line-height:1.75;letter-spacing:.02em}
+    .solution-copy h2 .accent{display:inline-block;background-image:linear-gradient(transparent 68%,rgba(173,196,144,.55) 68%);color:var(--blue-700)}
+    /* 見出しの上に細い罫を1本。区切りが分かるだけで締まる */
+    .solution-copy{position:relative}
+    .solution-copy::before{content:"";display:block;width:34px;height:2px;margin:0 auto 22px;background:var(--blue-500)}
+
+    .director{grid-template-columns:none;justify-items:center;gap:12px;margin:0 0 22px;padding-top:26px;border-top:1px solid rgba(113,147,91,.24)}
+    .avatar{width:88px;height:88px}
+    .director-name{margin:0;text-align:center;line-height:1.5}
+    .director-name small{display:block;margin-bottom:2px;color:var(--blue-500);font-size:10.5px;font-weight:800;letter-spacing:.18em;text-indent:.18em}
+    .director-name strong{display:block;font-size:20px;font-weight:900;letter-spacing:-.02em}
+    .director-name span{display:block;color:var(--muted);font-size:11.5px}
+
+    /* 本文は読み幅を絞る。端から端まで伸びると目が戻れなくなる */
+    .message{max-width:30em;margin:0 auto;color:var(--ink);font-size:14px;line-height:1.95}
+
+    .solution-result{margin-top:26px;padding-top:22px;border-top:1px solid rgba(113,147,91,.24);font-family:var(--font-mincho);font-size:clamp(16px,4.4vw,20px);font-weight:700;line-height:1.85;letter-spacing:.02em}
+    .solution-result .accent{display:inline-block;background-image:linear-gradient(transparent 68%,rgba(173,196,144,.55) 68%)}
+
+
     /* ── オープン記念CTA（ホームページと同じ設計） ──
     　　濃い緑で反転させ、背面でゆっくり光を動かして単色の帯に見せない。
     　　「無料」だけ明滅させて視線を止める。 */
@@ -63,23 +118,6 @@
     .cc-btn-tel{background:#c9695f}
     .cc-sub{margin:16px 0 0;color:rgba(255,255,255,.88);font-size:clamp(12px,2.9vw,13.5px);line-height:1.8}
     .cc-fine{margin:10px 0 0;color:rgba(255,255,255,.5);font-size:11px;line-height:1.9}
-    .final-offer{position:relative;min-height:70vh;overflow:hidden;color:#fff}.final-offer-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.final-offer::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.52),rgba(0,0,0,.18),transparent),linear-gradient(0deg,rgba(0,0,0,.55),transparent 58%,rgba(0,0,0,.2))}.final-offer-inner{position:relative;z-index:2;display:flex;min-height:70vh;flex-direction:column;justify-content:space-between;padding:40px 24px 32px}.final-offer-kicker{margin-bottom:12px;color:rgba(255,255,255,.72);font-size:12px;letter-spacing:.08em}.final-offer h2{margin-bottom:12px;font-size:24px;font-weight:900;line-height:1.45;text-shadow:0 2px 6px rgba(0,0,0,.5)}.offer-badge{display:inline-block;padding:4px 12px;border-radius:0;background:var(--blue-500);font-size:10px;font-weight:700;letter-spacing:.08em}.offer-price-label{display:inline-block;margin-bottom:12px;padding:4px 12px;border:1px solid rgba(255,255,255,.3);border-radius:0;background:rgba(255,255,255,.2);font-size:10px;font-weight:700}.offer-price{font-size:52px;font-weight:900;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,.4)}.offer-price small{font-size:24px}.offer-note{margin:8px 0 0;color:rgba(255,255,255,.55);font-size:10px}.final-line{padding:56px 0 80px;background:#fff;text-align:center}.final-line h2{margin:0 20px 24px;color:var(--blue-700);font-size:20px;line-height:1.75}
-    footer{padding:40px 20px 112px;font-size:12px}.sticky-cta{padding:8px;background:rgba(255,255,255,.95);box-shadow:0 -5px 20px rgba(0,0,0,.08)}.sticky-cta-inner{display:flex;width:100%;max-width:448px;gap:8px}.sticky-label{display:block;line-height:1.25;text-align:center}
-    .sticky-label b{display:block;font-size:15px;font-weight:900;letter-spacing:0;white-space:nowrap}
-    .sticky-action{display:flex;min-height:56px;flex:1;align-items:center;justify-content:center;border-radius:0;color:#fff;font-size:13px;font-weight:700;line-height:1.25;text-align:center;box-shadow:0 4px 8px rgba(0,0,0,.13)}.sticky-action.phone{background:#d9736e}.sticky-action.line{background:#06c755}.sticky-icon{margin-right:7px;font-size:18px}
-    .line-cta-button,.sticky-action{text-decoration:none}
-    /* ヒーロー画像のくすみグリーンに合わせた統一カラー */
-    body{background:#e8eee3}
-    .feature-media,.video-frame{background:#dce6d3}.video-frame,.solution-video{box-shadow:0 10px 24px rgba(54,84,60,.18)}.credential-proof{background:var(--blue-300)}.credential-proof div{background:linear-gradient(145deg,#fff,#edf3e7)}
-    .line-cta-button{transition:transform .2s ease,box-shadow .2s ease}.line-cta-button:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(6,199,85,.42)}
-    .header-chip{display:flex;align-items:center;gap:5px;background:var(--blue-500)}
-    .solution-copy{text-align:center}
-    .avatar{position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.9);box-shadow:0 5px 16px rgba(54,84,60,.18)}.avatar img{position:absolute;inset:0;width:100%;height:100%!important;max-width:none;object-fit:cover;object-position:50% 38%}
-    .free-price{position:relative;z-index:1;margin:0 0 28px;color:var(--blue-700)}.free-price small{margin-bottom:4px;color:var(--muted);letter-spacing:.08em}.free-price strong{font-size:76px;letter-spacing:-.06em}
-    .final-offer::before{background:linear-gradient(90deg,rgba(31,55,36,.76),rgba(31,55,36,.32),transparent),linear-gradient(0deg,rgba(31,55,36,.72),transparent 58%,rgba(31,55,36,.24))}
-    .offer-badge{background:var(--blue-500)}.offer-price{font-size:41px;line-height:1.25;letter-spacing:.02em}.offer-price small{display:block;margin-top:4px;font-size:28px;letter-spacing:.18em}.offer-note{color:rgba(255,255,255,.72)}
-    footer{background:var(--blue-700)}.sticky-action.phone{background:#76906a}.sticky-action.line{background:#06c755}
-    @media (min-width:768px){body{padding-top:0}.page{margin-top:32px;margin-bottom:32px}.site-header{top:32px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}.line-shine{animation:none}}
   </style>
 </head>
 <body>
@@ -114,7 +152,7 @@
       <div class="solution-copy"><h2 id="solution-title">繰り返す不調こそ、<br>今、早めのケアを。<br><span class="accent">「コアバランス整体」</span>が<br>身体の土台から整えます。</h2></div>
       <div class="solution-video-wrap"><div class="video-frame solution-video"><video muted loop playsinline preload="none" poster="./assets/images/solution-core-care-poster.webp" data-autoplay aria-label="コアバランス整体の施術イメージ"><source data-src="./assets/images/solution-core-care.mp4" type="video/mp4"></video></div></div>
       <div class="solution-details">
-        <div class="director"><div class="avatar"><img src="./assets/images/director-profile.webp" alt="田島2丁目の整骨院 院長" width="320" height="320" loading="lazy"></div><div><strong>院長　古賀 達也</strong><small>柔道整復師（国家資格）・施術歴10年</small></div></div>
+        <div class="director"><div class="avatar"><img src="./assets/images/director-profile.webp" alt="田島2丁目の整骨院 院長 古賀達也" width="320" height="320" loading="lazy"></div><p class="director-name"><small>院長</small><strong>古賀 達也</strong><span>柔道整復師（国家資格）／施術歴10年</span></p></div>
         <p class="message">目の前のつらさだけでなく、日常のどんな場面で困っているのかまで丁寧にお聞きします。不安や疑問を置き去りにせず、納得して受けられるケアを大切にします。</p>
         <div class="media-slot youtube-slot" data-image-slot="youtube"><span>院長メッセージ動画 準備中<small>YouTube完成後に差し替えます</small></span></div>
         <p class="solution-result">そうすることで<br>「繰り返す不調や乱れ」を<br><span class="accent">身体の土台から整えます。</span></p>
