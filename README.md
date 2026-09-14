@@ -45,3 +45,23 @@
 ## ローカル確認
 
 `index.html` をブラウザで開くか、任意の静的サーバーで配信してください。
+
+## デプロイ
+
+Cloudflare Pages（プロジェクト名 `tajima2-lp`）に配信しています。
+
+```
+cp index.html dist/ && cp -r assets dist/
+npx wrangler pages deploy dist --project-name tajima2-lp --branch main --commit-dirty=true
+```
+
+公開URL: <https://tajima2-lp.pages.dev>
+
+`dist/` は配信用に index.html と assets をまとめただけのフォルダで、
+git の追跡対象外です。ソースはリポジトリ直下の `index.html`。
+
+**Vercel からの移行について**
+以前は GitHub 連携で Vercel に自動デプロイしていました。Hobbyプランは
+商用利用が規約違反にあたるため、Cloudflare に移しています。
+`vercel.json` は移行前の名残です。広告のリンク先を新URLへ切り替えたあと、
+Vercel 側のプロジェクトを削除してください。
