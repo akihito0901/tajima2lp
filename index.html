@@ -16,7 +16,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    document.documentElement.classList.add('js');
+
+    // 読み込み時は必ずページの先頭から見せる。
+    // ブラウザ既定の history.scrollRestoration は前回位置を復元するため、
+    // 更新や再訪で少し下にスクロールした状態から始まることがある。
+    // 描画前に効かせたいので head に置く（body側だと一瞬ジャンプが見える）。
+    if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+    if (!location.hash) {
+      window.addEventListener('load', function () {
+        window.scrollTo(0, 0);
+        // .page は overflow:hidden のスクロールコンテナなので、
+        // 中身がわずかにずれていた場合もここで戻す
+        var page = document.querySelector('.page');
+        if (page) { page.scrollTop = 0; }
+      });
+    }
+  </script>
   <style>
     :root { --cream:#f5f7ef; --blue-100:#edf3e7; --blue-200:#d6e2c9; --blue-300:#adc490; --blue-500:#71935b; --blue-700:#36543c; --ink:#2d3b31; --muted:#6b796e; --coral:#789266; --line:rgba(113,147,91,.24); --line-green:#06c755; --shadow:0 18px 48px rgba(54,84,60,.14); --font-mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif; }
     *,*::before,*::after{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);background:#dfe9ee;font-family:"Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;line-height:1.8;padding-bottom:74px} img{display:block;max-width:100%} button,a{font:inherit} a{color:inherit} p,h1,h2,h3{margin-top:0}:focus-visible{outline:3px solid #f3a55b;outline-offset:3px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
