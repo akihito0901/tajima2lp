@@ -7,7 +7,12 @@
   <meta name="description" content="田島2丁目の整骨院のランディングページです。独自のコアバランスアプローチで、身体のお悩みに寄り添います。10月1日から10日まで、先着80名様の初回無料体験を実施します。">
   <meta name="theme-color" content="#496b4e">
   <title>コアバランス整体｜田島2丁目の整骨院</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2371935b'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='white'%3E田%3C/text%3E%3C/svg%3E">
+  <!-- 検索結果に出るアイコンは 48px の倍数・正方形が条件なので192pxを用意。
+       ロゴが背景透過のままだとダークテーマでタブのアイコンが消えるため、
+       白地の正方形に載せて書き出したものを使う。ホームページと同じ画像。 -->
+  <link rel="icon" href="./assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./assets/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/favicon-180.png" sizes="180x180">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet">
@@ -18,7 +23,10 @@
     .page{width:min(100%,460px);min-height:100vh;margin:0 auto;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
     .draft-bar{padding:7px 14px;color:#fff;background:var(--blue-700);font-size:11px;font-weight:700;line-height:1.5;text-align:center;letter-spacing:.03em}
     .site-header{position:sticky;top:0;z-index:50;display:flex;min-height:57px;align-items:center;justify-content:space-between;gap:12px;padding:8px 14px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(12px)}
-    .brand{line-height:1.25}.brand small{display:block;color:var(--blue-500);font-size:8px;font-weight:800;letter-spacing:.12em}.brand strong{font-size:15px;font-weight:900;letter-spacing:-.04em}.header-chip{flex:0 0 auto;padding:7px 12px;border-radius:0;color:#fff;background:var(--blue-500);font-size:10px;font-weight:800;text-decoration:none}
+    /* ロゴは背景が透過しているので、下地や角丸は付けずそのまま置く。
+       高さを基準に揃え、幅は縦横比に任せる。 */
+    .brand{display:flex;align-items:center;gap:9px;line-height:1.25}
+    .brand-logo{flex:0 0 auto;width:auto;height:32px}.brand small{display:block;color:var(--blue-500);font-size:8px;font-weight:800;letter-spacing:.12em}.brand strong{font-size:15px;font-weight:900;letter-spacing:-.04em}.header-chip{flex:0 0 auto;padding:7px 12px;border-radius:0;color:#fff;background:var(--blue-500);font-size:10px;font-weight:800;text-decoration:none}
     .hero{position:relative;min-height:610px;background:var(--blue-100)}.hero img{width:100%;height:610px;object-fit:cover;object-position:58% center}.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,58,71,.04) 25%,rgba(30,58,71,.2) 51%,rgba(30,58,71,.9) 100%),linear-gradient(90deg,rgba(255,255,255,.86),transparent 72%)}.hero-copy{position:absolute;z-index:2;right:0;bottom:0;left:0;padding:38px 24px 34px;color:#fff}.eyebrow{display:block;margin-bottom:12px;font-size:10px;font-weight:800;letter-spacing:.2em}.hero h1{margin-bottom:14px;font-size:clamp(30px,9vw,42px);line-height:1.38;letter-spacing:-.055em;text-shadow:0 3px 16px rgba(0,0,0,.34)}.hero h1 em{color:#dff4ff;font-style:normal}.hero p{max-width:340px;margin-bottom:0;font-size:13px;font-weight:600;line-height:1.8}
     .hero-art,.image-section{width:100%;background:#fff}.hero-art img,.image-section img{display:block;width:100%;height:auto}
     .section{padding:64px 24px}.section-blue{background:var(--blue-100)}.section-deep{color:#fff;background:var(--blue-700)}.section-label{display:block;margin-bottom:12px;color:var(--blue-500);font-size:10px;font-weight:900;letter-spacing:.28em;text-align:center}.section-deep .section-label{color:var(--blue-200)}.section h2{margin-bottom:24px;font-size:clamp(24px,7vw,31px);line-height:1.55;text-align:center;letter-spacing:-.04em}.lead{margin:0 auto 30px;color:var(--muted);font-size:14px;text-align:center}.accent{color:var(--blue-500)}.section-deep .accent{color:#dff4ff}
@@ -54,6 +62,10 @@
     /* ヒーロー画像のくすみグリーンに合わせた統一カラー */
     body{background:#e8eee3}
     .feature-media,.video-frame{background:#dce6d3}.video-frame,.solution-video{box-shadow:0 10px 24px rgba(54,84,60,.18)}.credential-proof{background:var(--blue-300)}.credential-proof div{background:linear-gradient(145deg,#fff,#edf3e7)}
+    /* 01・02・04 は写真の上なので白系で読めるが、03だけは
+       淡い実績パネルの上に乗るため白い番号が消えてしまう。ここだけ濃い緑にする。 */
+    .credential-proof+.feature-num{color:var(--blue-700);text-shadow:none}
+    .credential-proof+.feature-num::after{background:var(--blue-700);box-shadow:none}
     .line-cta-button{transition:transform .2s ease,box-shadow .2s ease}.line-cta-button:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(6,199,85,.42)}
     .header-chip{display:flex;align-items:center;gap:5px;background:var(--blue-500)}
     .solution-copy{text-align:center}
@@ -122,7 +134,7 @@
 </head>
 <body>
   <main class="page" id="top">
-    <header class="site-header"><div class="brand"><strong>田島2丁目の整骨院</strong></div><a class="header-chip" href="https://www.google.com/maps/search/?api=1&amp;query=田島2丁目の整骨院"><span aria-hidden="true">📍</span>Googleマップ</a></header>
+    <header class="site-header"><div class="brand"><img class="brand-logo" src="./assets/images/logo.webp" alt="" width="320" height="269" decoding="async"><strong>田島2丁目の整骨院</strong></div><a class="header-chip" href="https://www.google.com/maps/search/?api=1&amp;query=田島2丁目の整骨院"><span aria-hidden="true">📍</span>Googleマップ</a></header>
 
     <section class="hero-art" aria-label="コアバランス整体のご案内">
       <h1 class="sr-only">身体の土台から整えるコアバランス整体</h1>
