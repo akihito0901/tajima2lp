@@ -75,6 +75,21 @@
     .offer-badge{background:var(--blue-500)}.offer-price{font-size:41px;line-height:1.25;letter-spacing:.02em}.offer-price small{display:block;margin-top:4px;font-size:28px;letter-spacing:.18em}.offer-note{color:rgba(255,255,255,.72)}
     footer{background:var(--blue-700)}.sticky-action.phone{background:#76906a}.sticky-action.line{background:#06c755}
     @media (min-width:768px){body{padding-top:0}.page{margin-top:32px;margin-bottom:32px}.site-header{top:32px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}.line-shine{animation:none}}
+
+    /* 院長メッセージ動画。
+       YouTubeのiframeをそのまま置くと、再生しない人にも1MB近いプレイヤーJSを
+       読ませてしまう。サムネイルだけ先に出し、タップされて初めてiframeを差し込む。
+       サムネイルもYouTubeから読まず自前のWebPにして、初期表示で外部通信を起こさない。 */
+    .video-embed{margin-top:24px}
+    .video-embed-btn{position:relative;display:block;width:100%;padding:0;border:0;background:#000;cursor:pointer;line-height:0}
+    .video-embed-btn img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+    .video-play{position:absolute;top:calc(50% - 28px);left:50%;width:68px;height:48px;transform:translate(-50%,-50%);background:rgba(0,0,0,.62);transition:background .2s ease}
+    .video-play::after{content:"";position:absolute;top:50%;left:53%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff}
+    .video-embed-btn:hover .video-play,.video-embed-btn:focus-visible .video-play{background:#e02d27}
+    .video-embed-cap{display:block;padding:12px 14px;background:var(--blue-700);color:#fff;font-size:13px;font-weight:800;line-height:1.5;text-align:center}
+    .video-embed-cap small{display:block;margin-top:2px;color:rgba(255,255,255,.72);font-size:11px;font-weight:500}
+    .video-embed iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0}
+
     /* ── 「コアバランス整体が土台から整えます」のセクション ──
     　　見出しをゴシック900のベタ打ちからホームページと同じ明朝に変え、
     　　サービス名には緑の帯を敷いて視線を止める。
@@ -166,7 +181,7 @@
       <div class="solution-details">
         <div class="director"><div class="avatar"><img src="./assets/images/director-profile.webp" alt="田島2丁目の整骨院 院長 古賀達也" width="320" height="320" loading="lazy"></div><p class="director-name"><small>院長</small><strong>古賀 達也</strong><span>柔道整復師（国家資格）／施術歴10年</span></p></div>
         <p class="message">目の前のつらさだけでなく、日常のどんな場面で困っているのかまで丁寧にお聞きします。不安や疑問を置き去りにせず、納得して受けられるケアを大切にします。</p>
-        <div class="media-slot youtube-slot" data-image-slot="youtube"><span>院長メッセージ動画 準備中<small>YouTube完成後に差し替えます</small></span></div>
+        <div class="video-embed"><button class="video-embed-btn" type="button" data-yt="fcZhYhWQhu4" aria-label="院長からのメッセージ動画を再生する（YouTube）"><img src="./assets/images/director-video-thumb.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="video-play" aria-hidden="true"></span><span class="video-embed-cap">院長からのメッセージ<small>タップで再生します</small></span></button></div>
         <p class="solution-result">そうすることで<br>「繰り返す不調や乱れ」を<br><span class="accent">身体の土台から整えます。</span></p>
       </div>
     </section>
@@ -217,6 +232,18 @@
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const targets=document.querySelectorAll('.reveal');
     if(reduceMotion||!('IntersectionObserver' in window)){targets.forEach((target)=>target.classList.add('visible'));}else{const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.08});targets.forEach((target)=>observer.observe(target));}
+    /* YouTubeはタップされて初めて読み込む。
+       再生しない人にプレイヤーのJSを読ませないため。 */
+    document.querySelectorAll('.video-embed-btn').forEach((btn)=>{
+      btn.addEventListener('click',()=>{
+        const frame=document.createElement('iframe');
+        frame.src='https://www.youtube-nocookie.com/embed/'+btn.dataset.yt+'?autoplay=1&rel=0&playsinline=1';
+        frame.title='院長からのメッセージ';
+        frame.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
+        frame.allowFullscreen=true;
+        btn.replaceWith(frame);
+      },{once:true});
+    });
     const videos=document.querySelectorAll('video[data-autoplay]');
     const loadVideo=(video)=>{const source=video.querySelector('source[data-src]');if(source){source.src=source.dataset.src;source.removeAttribute('data-src');video.load();}video.play().catch(()=>{});};
     if('IntersectionObserver' in window){const videoObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){loadVideo(entry.target);}else{entry.target.pause();}});},{rootMargin:'180px 0px',threshold:.05});videos.forEach((video)=>videoObserver.observe(video));}else{videos.forEach(loadVideo);}
