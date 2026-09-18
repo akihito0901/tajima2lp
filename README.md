@@ -28,19 +28,59 @@
 
 ## 実装済み画像
 
-- `hero-core-balance.png`: ヒーロー
-- `empathy-concerns.png`: 「こんなお悩みありませんか？」
-- `problem-progression.png`: 不調を放置した場合の問題提起
-- `future-benefits.png`: 「こんな未来が待っています！」
+- `hero-core-balance.webp`: ヒーロー
+- `empathy-concerns.webp`: 「こんなお悩みありませんか？」
+- `problem-progression.webp`: 不調を放置した場合の問題提起
+- `future-benefits.webp`: 「こんな未来が待っています！」
+- `feature-clinic.webp`: 理由04・院内（実際の施術室）
+- `final-offer-bg.webp`: 最終CTAの背景
 
 ## 実装済み動画
 
-- `solution-core-care.mp4`: 早めのケア・解決策
-- `feature-core-balance.mp4`: コアバランスアプローチ
-- `feature-counseling.mp4`: カウンセリング
-- `feature-clinic.mp4`: 院内イメージ（内装完成までの仮動画）
+| 使用箇所 | ファイル | 元素材 |
+|---|---|---|
+| 解決策「繰り返す不調こそ、今、早めのケアを」 | `solution-core-care.mp4` | IMG_0099.mov |
+| 理由01 コアバランスアプローチ | `feature-core-balance.mp4` | IMG_0110.mov |
+| 理由02 カウンセリング | `feature-counseling.mp4` | （初回から据え置き） |
+| 理由03 国家資格保有者による施術 | `feature-experience.mp4` | IMG_0104.mov |
 
-動画はH.264 MP4・横幅960px・音声なし・Fast StartでWeb向けに圧縮し、初期表示を軽くするため画面付近に来たときだけ再生します。
+理由04は動画ではなく院内写真（`feature-clinic.webp` ← IMG_0078.heic）。
+
+### 動画の作り方
+
+H.264 MP4・**横幅900px**・音声なし・Fast Start。初期表示を軽くするため、
+画面付近に来たときだけ `source[data-src]` を差し込んで再生する。
+
+```
+ffmpeg -i 元素材.mov -an -vf "scale=900:-2"   -c:v libx264 -profile:v high -pix_fmt yuv420p -crf 28 -preset slow -g 60   -movflags +faststart 出力.mp4
+
+# ポスター（1秒地点のフレーム）
+ffmpeg -ss 1 -i 元素材.mov -frames:v 1 -update 1 -vf "scale=900:-2"   -c:v libwebp -quality 78 出力-poster.webp
+```
+
+- iPhoneの `.mov` は回転メタデータ（rotation=-90）が付いている。ffmpegが自動で
+  適用するので、`transpose` を自分で書かないこと。二重に回る
+- 1MBを超えるようなら crf を 30〜32 に上げる。表示枠が幅448pxなので、
+  crf32 でも粗さは見えない（`feature-experience.mp4` は crf32）
+- **`.heic` は ffmpeg だとタイルの1枚しかデコードできない。**
+  4032×3024の写真が512×512の断片になる。WindowsのHEIFデコーダを使うこと。
+
+```powershell
+Add-Type -AssemblyName PresentationCore
+$s=[System.IO.File]::OpenRead('IMG_xxxx.heic')
+$d=[System.Windows.Media.Imaging.BitmapDecoder]::Create($s,'None','OnLoad')
+$e=New-Object System.Windows.Media.Imaging.PngBitmapEncoder
+$e.Frames.Add($d.Frames[0])
+$o=[System.IO.File]::Create('out.png'); $e.Save($o); $o.Close(); $s.Close()
+```
+
+そのあと sharp で `resize({width:900}).webp({quality:80})`。
+
+### ポスター画像と最終CTAの背景
+
+最終CTA（`.final-offer-bg`）は `solution-core-care-poster.webp` を使い回していたため、
+解決策セクションの動画を差し替えると背景まで変わってしまっていた。
+`final-offer-bg.webp` として切り離してある。**動画のポスターを最終CTAに使い回さないこと。**
 
 ## ローカル確認
 
