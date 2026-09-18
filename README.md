@@ -86,18 +86,47 @@ $o=[System.IO.File]::Create('out.png'); $e.Save($o); $o.Close(); $s.Close()
 
 `index.html` をブラウザで開くか、任意の静的サーバーで配信してください。
 
+## キャッシュ（先に読むこと）
+
+`assets/images/` のファイルは名前が固定なので、**中身だけ差し替えてもURLが変わりません。**
+そのままだとブラウザやCDNが古い方を出し続けます。
+
+対策として、index.html 側の参照に `?v=<中身のmd5先頭8桁>` を付けています。
+押すのは `tools/stamp.mjs`。手で書かないこと。
+
+```
+node tools/stamp.mjs
+```
+
+そのうえで `/assets/images/*` を**1年 immutable** でキャッシュさせています。
+設定は2箇所にあり、**両方直す必要があります。**
+
+| 配信先 | ファイル |
+|---|---|
+| Cloudflare Pages | `_headers`（dist直下に置く） |
+| Vercel | `vercel.json` の `headers` |
+
+> ★**ハッシュを押し忘れると、更新が永遠に届かなくなります。**★
+> 画像・動画を差し替えたら必ず `node tools/stamp.mjs` を走らせてください。
+> デプロイ手順に組み込んであります。
+
 ## デプロイ
 
-Cloudflare Pages（プロジェクト名 `tajima2-lp`）に配信しています。
+**配信先が2つあります。片方だけ更新すると内容がズレます。**
+
+| | URL | 反映のしかた |
+|---|---|---|
+| Cloudflare Pages | <https://tajima2-lp.pages.dev> | `wrangler pages deploy` |
+| Vercel | <https://tajima2lp.vercel.app> | GitHubへ push すると自動 |
 
 ```
-cp index.html dist/ && cp -r assets dist/
+node tools/stamp.mjs
+cp index.html _headers dist/ && cp -r assets dist/
 npx wrangler pages deploy dist --project-name tajima2-lp --branch main --commit-dirty=true
+git push origin main      # Vercel はこれで自動デプロイ
 ```
 
-公開URL: <https://tajima2-lp.pages.dev>
-
-`dist/` は配信用に index.html と assets をまとめただけのフォルダで、
+`dist/` は配信用に index.html・`_headers`・assets をまとめただけのフォルダで、
 git の追跡対象外です。ソースはリポジトリ直下の `index.html`。
 
 **Vercel からの移行について**

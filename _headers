@@ -1,0 +1,21 @@
+# Cloudflare Pages に渡すレスポンスヘッダー。dist/ の直下に置かれたものが読まれる。
+# 同じ内容を Vercel 向けに vercel.json の headers にも書いてある。**両方直すこと。**
+#
+# ★注意★ Cloudflare Pages は一致したルールを**全部適用して連結する**。
+# 先に書いた方が勝つ、ではない。`/*` に Cache-Control を書くと
+#   Cache-Control: public, max-age=31536000, immutable, public, max-age=0, must-revalidate
+# のように両方がくっついて壊れる。**Cache-Control を `/*` に書かないこと。**
+# HTMLは Pages の既定（public, max-age=0, must-revalidate）でそのまま正しい。
+
+# 画像と動画はURLに ?v=<中身のハッシュ> が付いている（tools/stamp.mjs が押す）。
+# 内容が変われば必ず別URLになるので、1年キャッシュさせてよい。
+#
+# ★ハッシュを押し忘れると更新が永遠に届かなくなる。★
+#   デプロイ前に必ず `node tools/stamp.mjs` を通すこと。
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# セキュリティ関連だけ全体に。Cache-Control はここに書かない（上の注意）
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
