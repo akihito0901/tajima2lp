@@ -183,6 +183,29 @@
     .cc-sub{margin:16px 0 0;color:rgba(255,255,255,.88);font-size:clamp(12px,2.9vw,13.5px);line-height:1.8}
     .cc-fine{margin:10px 0 0;color:rgba(255,255,255,.5);font-size:11px;line-height:1.9}
   </style>
+
+  <!-- Meta Pixel ─────────────────────────────────────────────────────
+       データセットID 1084802467274719 は**この案件専用**。
+       他案件と共有しないこと。共有すると、1案件が健康・ウェルネス判定で
+       制限されたときに同じデータセットの全案件のイベントが巻き込まれる
+       （752934397862087 を5案件で使い回して実際にそうなった）。
+  ────────────────────────────────────────────────────────────────── -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1084802467274719');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1084802467274719&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel -->
 </head>
 <body>
   <main class="page" id="top">
@@ -286,6 +309,26 @@
     const videos=document.querySelectorAll('video[data-autoplay]');
     const loadVideo=(video)=>{const source=video.querySelector('source[data-src]');if(source){source.src=source.dataset.src;source.removeAttribute('data-src');video.load();}video.play().catch(()=>{});};
     if('IntersectionObserver' in window){const videoObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){loadVideo(entry.target);}else{entry.target.pause();}});},{rootMargin:'180px 0px',threshold:.05});videos.forEach((video)=>videoObserver.observe(video));}else{videos.forEach(loadVideo);}
+
+  /* ── Meta Pixel の Lead 計測 ──────────────────────────────────────
+     ボタンごとに onclick を書くと、CTAを増やしたときに付け忘れる。
+     LINE と 電話 のリンクを**まとめて拾って**イベントリスナーを張る。
+     （桜並木LPで付け忘れによる計測漏れを起こしたので、最初からこの形にする）
+
+     content_name に症状名などの健康語を入れないこと。
+     Metaのドメインカテゴリ判定を重くする材料になる。 */
+  (function(){
+    if(typeof fbq!=='function')return;
+    var sent=false;
+    document.querySelectorAll('a[href^="https://lin.ee/"], a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        // 同じボタンの二度押しや、LINEアプリ復帰後の再クリックで二重計上しない
+        if(sent)return; sent=true;
+        setTimeout(function(){sent=false;}, 1500);
+        fbq('track','Lead',{content_name: a.href.indexOf('tel:')===0 ? 'tel' : 'line'});
+      });
+    });
+  })();
   </script>
 </body>
 </html>
