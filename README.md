@@ -39,7 +39,7 @@
 
 | 使用箇所 | ファイル | 元素材 |
 |---|---|---|
-| ヒーロー（オープン記念・無料体験） | `hero-core-balance.mp4`（720px幅・crf29・即再生） | 円のコピー.mp4 |
+| ヒーロー（オープン記念・無料体験） | `hero-core-balance.mp4`（720px幅・crf29・即再生） | 円のコピー (1).mp4 |
 | 解決策「繰り返す不調こそ、今、早めのケアを」 | `solution-core-care.mp4` | IMG_0099.mov |
 | 理由01 コアバランスアプローチ | `feature-core-balance.mp4` | IMG_0110.mov |
 | 理由02 カウンセリング | `feature-counseling.mp4` | （初回から据え置き） |
