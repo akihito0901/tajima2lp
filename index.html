@@ -28,7 +28,13 @@
   <link rel="apple-touch-icon" href="./assets/favicon-180.png" sizes="180x180">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet">
+  <!-- Googleフォントは描画を止めないよう後から当てる（media="print" → onload で all）。
+       普通の rel=stylesheet だと、CSSが届くまで画面が真っ白のまま待たされる。
+       届くまではゴシック体の代替フォントで表示される。 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet"></noscript>
+  <!-- ヒーローのポスターを最優先で取りに行く（動画が届くまでの見た目）。 -->
+  <link rel="preload" as="image" href="./assets/images/hero-core-balance-poster.webp?v=8881d708" fetchpriority="high">
   <script>
     document.documentElement.classList.add('js');
 
@@ -37,15 +43,11 @@
     // 更新や再訪で少し下にスクロールした状態から始まることがある。
     // 描画前に効かせたいので head に置く（body側だと一瞬ジャンプが見える）。
     if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-    if (!location.hash) {
-      window.addEventListener('load', function () {
-        window.scrollTo(0, 0);
-        // .page は overflow:hidden のスクロールコンテナなので、
-        // 中身がわずかにずれていた場合もここで戻す
-        var page = document.querySelector('.page');
-        if (page) { page.scrollTop = 0; }
-      });
-    }
+    // ★load で scrollTo(0,0) しないこと。★
+    // load はヒーロー動画などを待つので遅い回線だと十数秒後に来る。
+    // その間にスクロールし始めた人が先頭へ引き戻され、壊れたページに見えて離脱していた
+    // （2026-09-30 発覚。ファーストビュー離脱9割の主因）。
+    // 先頭から始めるのは上の scrollRestoration='manual' だけで足りる。
   </script>
   <style>
     :root { --cream:#f5f7ef; --blue-100:#edf3e7; --blue-200:#d6e2c9; --blue-300:#adc490; --blue-500:#71935b; --blue-700:#36543c; --ink:#2d3b31; --muted:#6b796e; --coral:#789266; --line:rgba(113,147,91,.24); --line-green:#06c755; --shadow:0 18px 48px rgba(54,84,60,.14); --font-mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif; }
@@ -72,7 +74,7 @@
     .faq{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line)}summary{position:relative;padding:18px 34px 18px 30px;cursor:pointer;font-size:14px;font-weight:800;list-style:none}summary::-webkit-details-marker{display:none}summary::before{content:"Q";position:absolute;left:2px;color:var(--blue-500);font-size:17px}summary::after{content:"+";position:absolute;right:4px;color:var(--blue-300);font-size:20px;font-weight:400}details[open] summary::after{content:"−"}.answer{position:relative;padding:0 6px 20px 30px;color:var(--muted);font-size:13px}.answer::before{content:"A";position:absolute;left:2px;color:var(--blue-300);font-size:17px;font-weight:800}
     .clinic-info{margin:28px 0 0;border-top:1px solid var(--line)}.clinic-info div{display:grid;grid-template-columns:82px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}.clinic-info dt{color:var(--muted)}.clinic-info dd{margin:0;font-weight:700}footer{padding:38px 24px 100px;color:rgba(255,255,255,.58);background:var(--blue-700);text-align:center;font-size:11px}footer strong{display:block;margin-bottom:8px;color:#fff;font-size:15px}.free-price{margin:25px 0;color:var(--coral);font-weight:900}.free-price small{display:block;color:var(--muted);font-size:12px}.free-price strong{font-size:62px;line-height:1}
     .sticky-cta{position:fixed;z-index:100;right:0;bottom:0;left:0;padding:8px 12px max(8px,env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,255,255,.95);backdrop-filter:blur(12px)}.sticky-cta-inner{display:grid;width:min(100%,436px);margin:auto}.sticky-cta .button{min-height:54px;border-radius:0;font-size:13px}
-    .reveal{opacity:1;transform:none}.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease-out,transform .7s ease-out}.js .reveal.visible{opacity:1;transform:none}
+    .reveal{opacity:1;transform:none}.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .45s ease-out,transform .45s ease-out}.js .reveal.visible{opacity:1;transform:none}
 
     /* 平成よしずみLPと同じタイポグラフィ・幅・余白 */
     body{background:var(--cream);font-family:"Noto Sans JP",sans-serif;line-height:1.75;padding-bottom:80px}
@@ -231,7 +233,7 @@
          スクロールされる前に離脱する。ホームページと同じ構成。
          囲みを付けず、字間と✦だけで見出しを立たせ、
          通常料金→無料の落差を縦に積んで読ませる。 -->
-    <section class="offer-cta reveal" aria-labelledby="availability-title">
+    <section class="offer-cta" aria-labelledby="availability-title">
       <div class="offer-cta-inner">
         <p class="cc-badge"><span class="cc-star" aria-hidden="true">✦</span>オープン記念<span class="cc-star" aria-hidden="true">✦</span></p>
         <p class="cc-limit">先着<b>80</b>名限定</p>
@@ -303,9 +305,13 @@
   </main>
   <div class="sticky-cta" aria-label="固定お問い合わせ案内"><div class="sticky-cta-inner"><a class="sticky-action phone" href="tel:09073928693"><span class="sticky-icon">☎</span><span class="sticky-label">電話で予約<b>090-7392-8693</b></span></a><a class="sticky-action line" href="https://lin.ee/QbM8YQy"><span class="sticky-icon">LINE</span><span class="sticky-label">無料体験は<b>ココから！</b></span></a></div></div>
   <script>
+    /* ふわっと出す演出（.reveal）。
+       画面に入る少し手前（下35%）で出し始める。以前は threshold:.08 で、
+       縦長のセクションだと数百pxスクロールするまで真っ白な空白が続き、壊れて見えた。
+       ヒーロー直下のオープン記念CTAは演出なしで最初から表示する。 */
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const targets=document.querySelectorAll('.reveal');
-    if(reduceMotion||!('IntersectionObserver' in window)){targets.forEach((target)=>target.classList.add('visible'));}else{const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.08});targets.forEach((target)=>observer.observe(target));}
+    if(reduceMotion||!('IntersectionObserver' in window)){targets.forEach((target)=>target.classList.add('visible'));}else{const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:0,rootMargin:'0px 0px 35% 0px'});targets.forEach((target)=>observer.observe(target));}
     /* YouTubeはタップされて初めて読み込む。
        再生しない人にプレイヤーのJSを読ませないため。 */
     document.querySelectorAll('.video-embed-btn').forEach((btn)=>{
