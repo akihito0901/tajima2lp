@@ -28,7 +28,8 @@
 
 ## 実装済み画像
 
-- `hero-core-balance-poster.webp`: ヒーロー動画のポスター（1フレーム目）
+- `hero-extend-poster.webp`: ヒーロー動画のポスター（1フレーム目）
+- `hero-core-balance*`: 旧ヒーロー（オープン記念・先着80名の文字入り。今は未使用）
 - `empathy-concerns.webp`: 「こんなお悩みありませんか？」
 - `problem-progression.webp`: 不調を放置した場合の問題提起
 - `future-benefits.webp`: 「こんな未来が待っています！」
@@ -39,7 +40,7 @@
 
 | 使用箇所 | ファイル | 元素材 |
 |---|---|---|
-| ヒーロー（オープン記念・無料体験） | `hero-core-balance.mp4`（720px幅・crf29・即再生） | 円のコピー (1).mp4 |
+| ヒーロー（延長キャンペーン 2026-10-10〜） | `hero-extend.mp4`（720×1280・crf30・即再生）。**文字は焼き込まず index.html の `.hx` で重ねる**＝期限・人数は HTML を直すだけ。映像は上を空けるため420px下げてある | 田島 素材 IMG_0790／IMG_0866／IMG_0778 |
 | 解決策「繰り返す不調こそ、今、早めのケアを」 | `solution-core-care.mp4` | IMG_0099.mov |
 | 理由01 コアバランスアプローチ | `feature-core-balance.mp4` | IMG_0110.mov |
 | 理由02 カウンセリング | `feature-counseling.mp4` | （初回から据え置き） |

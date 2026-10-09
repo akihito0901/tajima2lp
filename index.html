@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="田島2丁目の整骨院のランディングページです。独自のコアバランスアプローチで、身体のお悩みに寄り添います。10月1日から10日まで、先着80名様の初回無料体験を実施します。">
+  <meta name="description" content="田島2丁目の整骨院のランディングページです。独自のコアバランスアプローチで、身体のお悩みに寄り添います。ご好評につき、初回無料体験を10月31日（土）まで延長。新たに30名様限定で受け付けます。">
   <meta name="theme-color" content="#ffd43b">
 
   <!-- SNSやブログに貼ったときのカード表示。
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="田島2丁目の整骨院">
   <meta property="og:title" content="コアバランス整体｜田島2丁目の整骨院">
-  <meta property="og:description" content="福岡市城南区田島2丁目に2026年10月1日オープン。オープン記念として、コアバランス整体の初回施術を先着80名様まで無料でご案内しています。">
+  <meta property="og:description" content="福岡市城南区田島2丁目に2026年10月1日オープン。ご好評につき、コアバランス整体の初回無料体験を10月31日（土）まで延長。新たに30名様限定でご案内しています。">
   <meta property="og:image" content="https://tajima2-lp.pages.dev/assets/ogp.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet"></noscript>
   <!-- ヒーローのポスターを最優先で取りに行く（動画が届くまでの見た目）。 -->
-  <link rel="preload" as="image" href="./assets/images/hero-core-balance-poster.webp?v=8881d708" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/images/hero-extend-poster.webp?v=dcfb9836" fetchpriority="high">
   <script>
     document.documentElement.classList.add('js');
 
@@ -157,6 +157,28 @@
     /* ── オープン記念CTA（ホームページと同じ設計） ──
     　　明るい黄色（2026-10-08 濃い緑から変更）。背面でゆっくり光を動かして単色の帯に見せない。
     　　「無料」だけ明滅させて視線を止める。 */
+    /* ── ヒーロー（延長キャンペーン版 2026-10-10）──
+    　　上：明るいクリームのベール＋濃い茶の文字（無料体験・新たに30名・期限）
+    　　下：濃い茶のベール＋白文字（コアバランス整体・3つの強み）。色はLP全体の黄色系に合わせる */
+    .hx{position:relative;overflow:hidden;aspect-ratio:9/16;max-height:880px;background:#4a3410;color:#3a2c14;text-align:center}
+    .hx-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+    .hx-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,248,222,.98) 0%,rgba(255,244,205,.93) 32%,rgba(255,240,190,.4) 42%,rgba(255,240,190,0) 48%,rgba(58,40,10,0) 58%,rgba(58,40,10,.6) 71%,rgba(46,32,8,.92) 100%)}
+    .hx-top{position:absolute;top:min(16vw,72px);right:0;left:0;padding:0 18px}
+    .hx-ribbon{display:inline-flex;align-items:center;gap:.5em;margin:0 0 min(1.5vw,7px);padding:.42em 1.2em;background:#d2401f;color:#fff;font-size:min(4vw,18px);font-weight:900;letter-spacing:.06em;line-height:1.3;clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%);box-shadow:0 4px 12px rgba(160,40,10,.25)}
+    .hx-ribbon b{font-size:1.18em;color:#fff1a8}.hx-ribbon span{font-size:.8em;color:#ffe774;animation:cc-twinkle 2.6s ease-in-out infinite}.hx-ribbon span:last-child{animation-delay:1.3s}
+    .hx-title{margin:0;line-height:1}
+    .hx-free{display:block;color:#3a2c14;font-family:var(--font-mincho);font-size:min(21vw,94px);font-weight:700;letter-spacing:.02em;line-height:1.12;text-shadow:0 0 2px #fff,0 0 18px rgba(255,255,255,.95),0 3px 0 rgba(255,214,80,.9)}
+    .hx-slots{display:inline-block;margin:min(1.5vw,7px) 0 0;padding:.12em 1.1em .18em;border:3px solid #fff;border-radius:999px;background:linear-gradient(160deg,#ffe774,#ffd43b 55%,#ffbe1a);color:#3d2a0e;font-family:var(--font-mincho);font-size:min(7vw,31px);font-weight:700;line-height:1.35;letter-spacing:.04em;box-shadow:0 6px 18px rgba(194,124,0,.35)}
+    .hx-slots b{margin:0 .08em;color:#d2401f;font-size:1.75em;line-height:1;vertical-align:-.06em}
+    .hx-date{margin:min(2.6vw,12px) 0 0;color:#3a2c14;font-size:min(5.6vw,25px);font-weight:900;letter-spacing:.04em;line-height:1.2}
+    .hx-date b{padding:0 .05em;color:#d2401f;font-size:1.45em;background:linear-gradient(transparent 62%,rgba(255,212,59,.85) 62%)}.hx-date small{font-size:.75em}
+    .hx-bottom{position:absolute;right:0;bottom:min(6vw,28px);left:0;padding:0 16px;color:#fff}
+    .hx-sub{margin:0 0 2px;font-family:var(--font-mincho);font-size:min(4.2vw,19px);font-weight:700;letter-spacing:.12em;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+    .hx-name{margin:0 0 min(4vw,18px);font-family:var(--font-mincho);font-size:min(10.4vw,46px);font-weight:700;letter-spacing:.06em;line-height:1.3;text-shadow:0 3px 12px rgba(0,0,0,.5)}
+    .hx-name::after{content:"";display:block;width:58%;height:4px;margin:4px auto 0;border-radius:2px;background:linear-gradient(90deg,transparent,#ffd43b 20%,#ffd43b 80%,transparent)}
+    .hx-points{display:grid;grid-template-columns:repeat(3,1fr);gap:min(2.4vw,10px);margin:0;padding:0;list-style:none}
+    .hx-points li{display:grid;aspect-ratio:1;place-items:center;border:2px solid rgba(255,212,59,.9);border-radius:50%;background:rgba(255,250,234,.9);color:#4a3410;font-size:min(3.2vw,14px);font-weight:900;line-height:1.45;letter-spacing:.02em}
+    @media (prefers-reduced-motion:reduce){.hx-ribbon span{animation:none}}
     .offer-cta{position:relative;overflow:hidden;padding:clamp(48px,7vw,80px) 22px;background:linear-gradient(160deg,#ffe774,#ffd43b 52%,#ffbe1a);color:#3d2a0e;text-align:center}
     .offer-cta::before{content:"";position:absolute;top:-60%;left:50%;width:130%;aspect-ratio:2/1;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 62%);animation:cta-aura 7s ease-in-out infinite;pointer-events:none}
     @keyframes cta-aura{0%,100%{opacity:.55;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.12)}}
@@ -222,17 +244,34 @@
   <main class="page" id="top">
     <header class="site-header"><div class="brand"><img class="brand-logo" src="./assets/images/logo.webp?v=62fbc97c" alt="" width="320" height="269" decoding="async"><strong>田島2丁目の整骨院</strong></div><a class="header-chip" href="https://www.google.com/maps/search/?api=1&amp;query=田島2丁目の整骨院"><span aria-hidden="true">📍</span>Googleマップ</a></header>
 
-    <section class="hero-art" aria-label="コアバランス整体のご案内">
-      <h1 class="sr-only">身体の土台から整えるコアバランス整体</h1>
-      <!-- ヒーローは最初から画面内なので data-src の遅延読み込みは使わず即再生。
-           動画が届くまではポスター（1フレーム目）が同じ見た目で出る。 -->
-      <video autoplay muted loop playsinline preload="auto" poster="./assets/images/hero-core-balance-poster.webp?v=8881d708" width="720" height="1280" aria-label="2026年10月1日ニューオープン。オープン記念、無料体験を先着80名様募集。身体の土台から整えるコアバランス整体"><source src="./assets/images/hero-core-balance.mp4?v=fa5fe89c" type="video/mp4"></video>
+    <!-- ヒーロー（2026-10-10 延長キャンペーン版）。
+         背景は施術の映像だけ（hero-extend.mp4、文字は焼き込まない）、文字はHTMLで上に重ねる。
+         **期限・人数が変わったら、この中の文字を直すだけでいい**（動画の作り直しは不要）。
+         ヒーローは最初から画面内なので data-src の遅延読み込みは使わず即再生。 -->
+    <section class="hx" aria-labelledby="hx-title">
+      <video class="hx-bg" autoplay muted loop playsinline preload="auto" poster="./assets/images/hero-extend-poster.webp?v=dcfb9836" width="720" height="1280" aria-hidden="true"><source src="./assets/images/hero-extend.mp4?v=c71b8fea" type="video/mp4"></video>
+      <div class="hx-veil" aria-hidden="true"></div>
+      <div class="hx-top">
+        <p class="hx-ribbon"><span aria-hidden="true">✦</span>ご好評につき<b>延長決定！</b><span aria-hidden="true">✦</span></p>
+        <h1 id="hx-title" class="hx-title"><span class="hx-free">無料体験</span><span class="sr-only">。身体の土台から整えるコアバランス整体（福岡市城南区 田島2丁目の整骨院）</span></h1>
+        <p class="hx-slots">新たに<b>30</b>名様限定</p>
+        <p class="hx-date"><b>10/31</b><small>（土）</small>まで</p>
+      </div>
+      <div class="hx-bottom">
+        <p class="hx-sub">〜 身体の土台から整える 〜</p>
+        <p class="hx-name">コアバランス整体</p>
+        <ul class="hx-points">
+          <li>丁寧な<br>カウンセリング</li>
+          <li>国家資格保有<br>10年のキャリア</li>
+          <li>首・肩・腰の<br>お悩みに</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- 残り人数の帯（2026-10-08 本人指示）。ヒーロー動画の「先着80名」の残り枠。
-         **人数が変わったら <em> の数字だけ直す。** キャンペーン終了（10/10）後は帯ごと消す -->
+    <!-- 残り人数の帯（2026-10-08 本人指示）。延長キャンペーン（新たに30名）の残り枠。
+         **人数が変わったら <em> の数字だけ直す。** キャンペーン終了（10/31）後は帯ごと消す -->
     <div class="remain-band" role="note">
-      <p><span class="rb-mark" aria-hidden="true">!</span>残り<em>25</em>名！お急ぎください！</p>
+      <p><span class="rb-mark" aria-hidden="true">!</span>残り<em>30</em>名！お急ぎください！</p>
     </div>
 
     <!-- オープン記念CTA。**ヒーロー直下**に置いている。
@@ -242,8 +281,8 @@
          通常料金→無料の落差を縦に積んで読ませる。 -->
     <section class="offer-cta" aria-labelledby="availability-title">
       <div class="offer-cta-inner">
-        <p class="cc-badge"><span class="cc-star" aria-hidden="true">✦</span>オープン記念<span class="cc-star" aria-hidden="true">✦</span></p>
-        <p class="cc-limit">先着<b>80</b>名限定</p>
+        <p class="cc-badge"><span class="cc-star" aria-hidden="true">✦</span>ご好評につき延長<span class="cc-star" aria-hidden="true">✦</span></p>
+        <p class="cc-limit">新たに<b>30</b>名限定</p>
         <h2 id="availability-title" class="cc-offer">コアバランス整体<span class="cc-was">通常 <s>5,500円</s></span><span class="cc-arrow" aria-hidden="true">▼</span><b>初回施術<em>無料</em></b></h2>
 
         <div class="cc-actions">
@@ -252,7 +291,7 @@
         </div>
 
         <p class="cc-sub">先着順のため、お早めにご予約ください。</p>
-        <p class="cc-fine">10月1日（木）〜10月10日（土） ／ 1日8名限定<br>LINE受付 24時間 ／ 電話受付 10:00〜20:00（休憩 13:30〜15:00）</p>
+        <p class="cc-fine">10月31日（土）まで ／ 1日8名限定<br>LINE受付 24時間 ／ 電話受付 10:00〜20:00（休憩 13:30〜15:00）</p>
       </div>
     </section>
 
@@ -297,14 +336,14 @@
 
     <section class="section section-blue reveal" aria-labelledby="faq-title">
       <h2 id="faq-title">よくあるご質問</h2>
-      <div class="faq"><details><summary>整骨院が初めてでも大丈夫ですか？</summary><div class="answer">はい。気になることを一つずつ伺い、身体の状態やご案内内容をわかりやすくお伝えします。不安な点はその都度お尋ねください。</div></details><details><summary>予約は必要ですか？</summary><div class="answer">無料体験は1日8名限定・先着順のため、事前予約をおすすめします。LINEから24時間受け付けています。</div></details><details><summary>初回無料体験について教えてください。</summary><div class="answer">オープン記念として、10月1日から10日まで「コアバランス整体」の初回施術を無料で体験いただけます。1日8名、合計80名様の先着順です。</div></details><details><summary>通常料金はいくらですか？</summary><div class="answer">コアバランス整体の通常料金は5,500円（税込）、初回は1,980円でご案内しています。オープン記念期間中は、その初回料金が無料になります。</div></details><details><summary>支払いは現金だけですか？</summary><div class="answer">現金のほか、クレジットカードとQRコード決済がご利用いただけます。</div></details><details><summary>駐車場はありますか？</summary><div class="answer">4台分ございます。お車でお越しいただけます。</div></details><details><summary>何時まで受け付けていますか？</summary><div class="answer">平日は10:00〜13:30／15:00〜20:00、土曜は10:00〜13:30です。日曜・祝日は休診となります。LINEでのご予約は24時間受け付けています。</div></details><details><summary>健康保険は使えますか？</summary><div class="answer">健康保険の取り扱いがあります。ぎっくり腰・寝違え・スポーツ中のケガなど、いつ何をして痛めたのかがはっきりしている症状が対象です。交通事故の自賠責保険にも対応しており、窓口でのご負担は0円です。慢性的な肩こり・腰痛は保険の対象外となるため、自費施術でのご案内となります。</div></details><details><summary>施術時間はどれくらいですか？</summary><div class="answer">お身体の状態によって変わります。初回はカウンセリングと検査を含めてご案内しますので、少し長めにお時間をいただきます。</div></details></div>
+      <div class="faq"><details><summary>整骨院が初めてでも大丈夫ですか？</summary><div class="answer">はい。気になることを一つずつ伺い、身体の状態やご案内内容をわかりやすくお伝えします。不安な点はその都度お尋ねください。</div></details><details><summary>予約は必要ですか？</summary><div class="answer">無料体験は1日8名限定・先着順のため、事前予約をおすすめします。LINEから24時間受け付けています。</div></details><details><summary>初回無料体験について教えてください。</summary><div class="answer">オープン記念の無料体験がご好評につき、10月31日（土）まで延長しました。「コアバランス整体」の初回施術を無料で体験いただけます。新たに30名様・1日8名の先着順です。</div></details><details><summary>通常料金はいくらですか？</summary><div class="answer">コアバランス整体の通常料金は5,500円（税込）、初回は1,980円でご案内しています。キャンペーン期間中（10月31日まで）は、その初回料金が無料になります。</div></details><details><summary>支払いは現金だけですか？</summary><div class="answer">現金のほか、クレジットカードとQRコード決済がご利用いただけます。</div></details><details><summary>駐車場はありますか？</summary><div class="answer">4台分ございます。お車でお越しいただけます。</div></details><details><summary>何時まで受け付けていますか？</summary><div class="answer">平日は10:00〜13:30／15:00〜20:00、土曜は10:00〜13:30です。日曜・祝日は休診となります。LINEでのご予約は24時間受け付けています。</div></details><details><summary>健康保険は使えますか？</summary><div class="answer">健康保険の取り扱いがあります。ぎっくり腰・寝違え・スポーツ中のケガなど、いつ何をして痛めたのかがはっきりしている症状が対象です。交通事故の自賠責保険にも対応しており、窓口でのご負担は0円です。慢性的な肩こり・腰痛は保険の対象外となるため、自費施術でのご案内となります。</div></details><details><summary>施術時間はどれくらいですか？</summary><div class="answer">お身体の状態によって変わります。初回はカウンセリングと検査を含めてご案内しますので、少し長めにお時間をいただきます。</div></details></div>
     </section>
 
 
 
     <section class="final-offer reveal" aria-labelledby="final-cta-title">
       <img class="final-offer-bg" src="./assets/images/final-offer-bg.webp?v=3d71ca48" alt="" width="960" height="1154" loading="lazy">
-      <div class="final-offer-inner"><div><p class="final-offer-kicker">＼ 本気で変えたい方へ ／</p><h2 id="final-cta-title">身体の土台を整え<br>動ける身体を<br>取り戻しましょう。</h2><span class="offer-badge">オープン記念・先着80名様</span></div><div><span class="offer-price-label">10月1日〜10日・初回限定</span><div class="offer-price">無料体験<small>募集中</small></div><p class="offer-note">※定員に達し次第、受付を終了します。</p></div></div>
+      <div class="final-offer-inner"><div><p class="final-offer-kicker">＼ 本気で変えたい方へ ／</p><h2 id="final-cta-title">身体の土台を整え<br>動ける身体を<br>取り戻しましょう。</h2><span class="offer-badge">ご好評につき延長・新たに30名様</span></div><div><span class="offer-price-label">10月31日（土）まで・初回限定</span><div class="offer-price">無料体験<small>募集中</small></div><p class="offer-note">※定員に達し次第、受付を終了します。</p></div></div>
     </section>
 
     <section class="final-line reveal"><h2>初回無料体験のご予約は<br><span class="accent">LINEから24時間受付</span></h2><div class="line-cta"><a class="line-cta-button" href="https://lin.ee/QbM8YQy"><span class="line-shine"></span><span class="line-cta-label">＼ 24時間受付・LINEで完結 ／</span><span class="line-cta-main"><span class="line-mark">LINE</span><strong>LINEで30秒予約</strong></span><span class="line-cta-note">先着順のため、お早めにご予約ください</span></a></div></section>
