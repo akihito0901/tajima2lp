@@ -245,7 +245,35 @@
     .cc-btn-tel{background:#e8662e}
     .cc-sub{margin:16px 0 0;color:rgba(61,42,14,.85);font-size:clamp(12px,2.9vw,13.5px);line-height:1.8}
     .cc-fine{margin:10px 0 0;color:rgba(61,42,14,.62);font-size:11px;line-height:1.9}
-  </style>
+  
+/* ── ヒーロー（洗練版 2026-10-19）── 上書き */
+.hx-veil{background:linear-gradient(180deg,rgba(255,251,240,.96) 0%,rgba(255,248,230,.9) 26%,rgba(255,246,222,0) 40%,rgba(30,22,8,0) 58%,rgba(30,22,8,.55) 74%,rgba(24,18,6,.9) 100%)}
+.hx-top{top:min(14vw,64px);padding:0 22px;text-align:center}
+.hx-kick{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 6px;color:#8a5a00;font-size:min(3.6vw,15px);font-weight:700;letter-spacing:.14em}
+.hx-kick i{width:1px;height:1em;background:currentColor;opacity:.5}
+.hx-title{margin:0}
+.hx-free{display:block;color:#2b200c;font-family:var(--font-mincho);font-size:min(19vw,84px);font-weight:700;letter-spacing:.08em;line-height:1.1;text-shadow:0 1px 0 rgba(255,255,255,.8)}
+.hx-line{margin:8px 0 0;color:#3a2c14;font-size:min(3.7vw,15.5px);font-weight:700;letter-spacing:.04em}
+.hx-line s{margin:0 .15em;color:#8a7a5f;text-decoration-color:#c2410c}
+.hx-line b{margin:0 .1em;color:#c2410c;font-size:1.35em;font-family:var(--font-mincho)}
+.hx-bottom{bottom:min(7vw,32px);padding:0 20px;text-align:center;color:#fff}
+.hx-sub{margin:0 0 4px;font-family:var(--font-mincho);font-size:min(4.4vw,19px);font-weight:700;letter-spacing:.3em;color:#ffe9a8;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+.hx-name{margin:0 0 10px;font-family:var(--font-mincho);font-size:min(7.2vw,31px);font-weight:700;letter-spacing:.04em;line-height:1.3;text-shadow:0 3px 12px rgba(0,0,0,.5)}
+.hx-name::after{content:none}
+.hx-name span{margin:0 .25em;color:#ffd43b;font-size:.8em}
+.hx-feat{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:0;font-size:min(3.3vw,13.5px);font-weight:700;letter-spacing:.04em;color:#fff3c8}
+.hx-feat i{width:1px;height:1em;background:rgba(255,243,200,.6)}
+.hx-name{font-size:min(6.1vw,26px);white-space:nowrap;letter-spacing:.02em}
+.hx-feat{gap:7px;font-size:min(3vw,12.5px);white-space:nowrap;letter-spacing:0}
+.cc-offer b{white-space:nowrap;font-size:clamp(26px,7.6vw,46px)}
+.rv-g{display:table;margin:0 auto 10px;background:#fff;border:1px solid #dadce0;padding:5px 14px;font-size:14px;font-weight:700;color:#3c4043;box-shadow:0 1px 3px rgba(60,64,67,.15)}
+.rv-g .g{font-family:Arial,Helvetica,sans-serif;font-size:1.15em;letter-spacing:0;margin-right:1px}
+.rv-g .g b{font-weight:700}
+.rv-g5{color:#FBBC05;margin-left:6px;letter-spacing:1px}
+.rv .rv-h{line-height:1.5;margin-bottom:6px}
+.rv-lead{text-align:center;font-size:13.5px;color:#7a6a4f;margin:0 0 16px}
+.hx-name{font-size:min(7vw,30px);white-space:normal;line-height:1.35}
+</style>
 
   <!-- Meta Pixel ─────────────────────────────────────────────────────
        データセットID 1084802467274719 は**この案件専用**。
@@ -290,26 +318,21 @@
       <video class="hx-bg" autoplay muted loop playsinline preload="auto" poster="./assets/images/hero-extend-poster.webp?v=dcfb9836" width="720" height="1280" aria-hidden="true"><source src="./assets/images/hero-extend.mp4?v=0920a931" type="video/mp4"></video>
       <div class="hx-veil" aria-hidden="true"></div>
       <div class="hx-top">
-        <p class="hx-ribbon"><span aria-hidden="true">✦</span>ご好評につき<b>延長決定！</b><span aria-hidden="true">✦</span></p>
+        <p class="hx-kick">ご好評につき延長<i></i>10/31（土）まで</p>
         <h1 id="hx-title" class="hx-title"><span class="hx-free">無料体験</span><span class="sr-only">。身体の土台から整えるコアバランス整体（福岡市城南区 田島2丁目の整骨院）</span></h1>
-        <p class="hx-slots">新たに<b>30</b>名様限定</p>
-        <p class="hx-date"><b>10/31</b><small>（土）</small>まで</p>
+        <p class="hx-line">セット施術 通常<s>8,800円</s>　新たに<b>30</b>名様限定</p>
       </div>
       <div class="hx-bottom">
-        <p class="hx-sub">〜 整えて、支える 〜</p>
-        <p class="hx-name">コアバランス整体<span class="hx-x">×</span><span class="hx-dyna">ダイナフィット</span></p>
-        <ul class="hx-points">
-          <li>丁寧な<br>カウンセリング</li>
-          <li>国家資格保有<br>10年のキャリア</li>
-          <li>寝たまま<br>服の上から</li>
-        </ul>
+        <p class="hx-sub">整えて、支える。</p>
+        <p class="hx-name">コアバランス整体<br><span>×</span>ダイナフィット</p>
+        <p class="hx-feat">国家資格・施術歴10年<i></i>寝たまま服の上から<i></i>駐車場4台</p>
       </div>
     </section>
 
     <!-- 残り人数の帯（2026-10-08 本人指示）。延長キャンペーン（新たに30名）の残り枠。
          **人数が変わったら <em> の数字だけ直す。** キャンペーン終了（10/31）後は帯ごと消す -->
     <div class="remain-band" role="note">
-      <p><span class="rb-mark" aria-hidden="true">!</span>残り<em>30</em>名！お急ぎください！</p>
+      <p><span class="rb-mark" aria-hidden="true">!</span>残り<em>15</em>名！お急ぎください！</p>
     </div>
 
     <!-- オープン記念CTA。**ヒーロー直下**に置いている。
@@ -340,8 +363,9 @@
 
     <!-- 口コミ（2026-10-19 本人「旧型LPにも口コミ入れて、早めに」）。Googleの口コミ2件をイニシャルで。アイコンは本人支給の仮アイコン -->
     <section class="rv" aria-labelledby="rv-title">
-      <p class="rv-kick">Google口コミより</p>
-      <h2 id="rv-title" class="rv-h">実際に受けた方の声</h2>
+      <p class="rv-g"><span class="g"><b style="color:#4285F4">G</b><b style="color:#EA4335">o</b><b style="color:#FBBC05">o</b><b style="color:#4285F4">g</b><b style="color:#34A853">l</b><b style="color:#EA4335">e</b></span>の口コミ<span class="rv-g5">★★★★★</span></p>
+      <h2 id="rv-title" class="rv-h">プレオープンから<br>たくさんのお客様に<br>ご来院いただきました！</h2>
+      <p class="rv-lead">いただいたご感想を、一部ご紹介します。</p>
       <article class="rv-card">
         <div class="rv-top"><img src="./assets/images/voice-a.png?v=6484a6a7" alt="" width="64" height="64" loading="lazy"><div><p class="rv-t">10年以上渡り歩いて、<br>ようやく辿り着きました</p><p class="rv-who">デスクワークの方　K様　<span class="rv-st">★★★★★</span></p></div></div>
         <p>社会人になってからの長年のデスクワークで、腰痛と肩こりにずっと悩まされてきました。10年以上、マッサージやカイロプラクティックなど様々な場所を渡り歩いてきましたが、ようやくこちらに辿り着きました。</p>
