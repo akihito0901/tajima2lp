@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="田島2丁目の整骨院のランディングページです。独自のコアバランスアプローチで、身体のお悩みに寄り添います。ご好評につき、初回無料体験を10月31日（土）まで延長。新たに30名様限定で受け付けます。">
+  <meta name="description" content="田島2丁目の整骨院のランディングページです。独自のコアバランスアプローチで、身体のお悩みに寄り添います。ご好評につき、コアバランス整体×ダイナフィットのセット施術（通常8,800円）の無料体験を10月31日（土）まで延長。新たに30名様限定で受け付けます。">
   <meta name="theme-color" content="#ffd43b">
 
   <!-- SNSやブログに貼ったときのカード表示。
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="田島2丁目の整骨院">
   <meta property="og:title" content="コアバランス整体｜田島2丁目の整骨院">
-  <meta property="og:description" content="福岡市城南区田島2丁目に2026年10月1日オープン。ご好評につき、コアバランス整体の初回無料体験を10月31日（土）まで延長。新たに30名様限定でご案内しています。">
+  <meta property="og:description" content="福岡市城南区田島2丁目に2026年10月1日オープン。ご好評につき、コアバランス整体×ダイナフィットのセット施術（通常8,800円）の無料体験を10月31日（土）まで延長。新たに30名様限定でご案内しています。">
   <meta property="og:image" content="https://tajima2-lp.pages.dev/assets/ogp.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -197,6 +197,16 @@
     @keyframes cc-glow{0%,100%{text-shadow:0 0 10px rgba(255,255,255,.7),0 0 26px rgba(255,255,255,.4)}50%{text-shadow:0 0 18px rgba(255,255,255,1),0 0 46px rgba(255,255,255,.75)}}
     /* 通常価格を「無料」の上に置いて値引きの落差を見せる。
     　　打ち消し線は <s> 側だけに掛け、「通常」の文字は消さない。 */
+    .cc-x{display:block;color:#d2401f;font-size:.9em;line-height:1.1}
+    .dn{position:relative;width:min(62vw,250px);margin:14px auto 4px}
+    .dn svg{width:100%;height:auto;display:block}
+    .dn-arc{transition:stroke-dasharray 3.4s cubic-bezier(.45,0,.25,1)}
+    .dn.in .dn-arc{stroke-dasharray:0 502.65}
+    .dn-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2;color:#3a2c14}
+    .dn-l{font-size:13px;font-weight:900;opacity:.75}
+    .dn-v{font-family:var(--font-mincho);font-size:clamp(34px,10vw,44px);font-weight:700;color:#d2401f}
+    .dn-v small{font-size:.4em}
+    .dn-s{font-size:10.5px;font-weight:700;opacity:.75;margin-top:2px}
     .cc-was{display:block;margin:10px 0 2px;color:rgba(61,42,14,.62);font-family:var(--font);font-size:clamp(13px,3.2vw,16px);font-weight:700;letter-spacing:.04em}
     .cc-was s{font-size:1.25em;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(210,64,31,.9)}
     .cc-arrow{display:block;margin:2px 0 -2px;color:#d2401f;font-size:clamp(11px,2.6vw,13px);line-height:1;animation:cc-drop 2.2s ease-in-out infinite}
@@ -283,7 +293,12 @@
       <div class="offer-cta-inner">
         <p class="cc-badge"><span class="cc-star" aria-hidden="true">✦</span>ご好評につき延長<span class="cc-star" aria-hidden="true">✦</span></p>
         <p class="cc-limit">新たに<b>30</b>名限定</p>
-        <h2 id="availability-title" class="cc-offer">コアバランス整体<span class="cc-was">通常 <s>5,500円</s></span><span class="cc-arrow" aria-hidden="true">▼</span><b>初回施術<em>無料</em></b></h2>
+        <h2 id="availability-title" class="cc-offer">コアバランス整体<span class="cc-x">×</span>ダイナフィット<span class="cc-was">セット施術 通常 <s>8,800円</s></span><span class="cc-arrow" aria-hidden="true">▼</span><b>セット施術<em>無料</em></b></h2>
+        <!-- 2026-10-19 ドーナツ：見えたら 8,800円の輪がなくなって「無料」に（LPパート2と同じ動き） -->
+        <div class="dn" aria-hidden="true">
+          <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="24"/><circle class="dn-arc" cx="100" cy="100" r="80" fill="none" stroke="#d2401f" stroke-width="24" stroke-dasharray="502.65 502.65" transform="rotate(-90 100 100)"/></svg>
+          <div class="dn-in"><span class="dn-l">セット施術</span><span class="dn-v" id="dnV"><span id="dnN">8,800</span><small>円</small></span><span class="dn-s">コアバランス整体 5,500円<br>＋ダイナフィット 3,300円</span></div>
+        </div>
 
         <div class="cc-actions">
           <a class="cc-btn cc-btn-line" href="https://lin.ee/QbM8YQy">LINEで30秒予約</a>
@@ -336,14 +351,14 @@
 
     <section class="section section-blue reveal" aria-labelledby="faq-title">
       <h2 id="faq-title">よくあるご質問</h2>
-      <div class="faq"><details><summary>整骨院が初めてでも大丈夫ですか？</summary><div class="answer">はい。気になることを一つずつ伺い、身体の状態やご案内内容をわかりやすくお伝えします。不安な点はその都度お尋ねください。</div></details><details><summary>予約は必要ですか？</summary><div class="answer">無料体験は1日8名限定・先着順のため、事前予約をおすすめします。LINEから24時間受け付けています。</div></details><details><summary>初回無料体験について教えてください。</summary><div class="answer">オープン記念の無料体験がご好評につき、10月31日（土）まで延長しました。「コアバランス整体」の初回施術を無料で体験いただけます。新たに30名様・1日8名の先着順です。</div></details><details><summary>通常料金はいくらですか？</summary><div class="answer">コアバランス整体の通常料金は5,500円（税込）、初回は1,980円でご案内しています。キャンペーン期間中（10月31日まで）は、その初回料金が無料になります。</div></details><details><summary>支払いは現金だけですか？</summary><div class="answer">現金のほか、クレジットカードとQRコード決済がご利用いただけます。</div></details><details><summary>駐車場はありますか？</summary><div class="answer">4台分ございます。お車でお越しいただけます。</div></details><details><summary>何時まで受け付けていますか？</summary><div class="answer">平日は10:00〜13:30／15:00〜20:00、土曜は10:00〜13:30です。日曜・祝日は休診となります。LINEでのご予約は24時間受け付けています。</div></details><details><summary>健康保険は使えますか？</summary><div class="answer">健康保険の取り扱いがあります。ぎっくり腰・寝違え・スポーツ中のケガなど、いつ何をして痛めたのかがはっきりしている症状が対象です。交通事故の自賠責保険にも対応しており、窓口でのご負担は0円です。慢性的な肩こり・腰痛は保険の対象外となるため、自費施術でのご案内となります。</div></details><details><summary>施術時間はどれくらいですか？</summary><div class="answer">お身体の状態によって変わります。初回はカウンセリングと検査を含めてご案内しますので、少し長めにお時間をいただきます。</div></details></div>
+      <div class="faq"><details><summary>整骨院が初めてでも大丈夫ですか？</summary><div class="answer">はい。気になることを一つずつ伺い、身体の状態やご案内内容をわかりやすくお伝えします。不安な点はその都度お尋ねください。</div></details><details><summary>予約は必要ですか？</summary><div class="answer">無料体験は1日8名限定・先着順のため、事前予約をおすすめします。LINEから24時間受け付けています。</div></details><details><summary>初回無料体験について教えてください。</summary><div class="answer">オープン記念の無料体験がご好評につき、10月31日（土）まで延長しました。「コアバランス整体」と「ダイナフィット」のセット施術（通常8,800円）を無料で体験いただけます。新たに30名様・1日8名の先着順です。</div></details><details><summary>通常料金はいくらですか？</summary><div class="answer">コアバランス整体は5,500円（税込）、ダイナフィットは3,300円です。キャンペーン期間中（10月31日まで）は、この2つを組み合わせたセット施術（通常8,800円）を無料で体験いただけます。</div></details><details><summary>支払いは現金だけですか？</summary><div class="answer">現金のほか、クレジットカードとQRコード決済がご利用いただけます。</div></details><details><summary>駐車場はありますか？</summary><div class="answer">4台分ございます。お車でお越しいただけます。</div></details><details><summary>何時まで受け付けていますか？</summary><div class="answer">平日は10:00〜13:30／15:00〜20:00、土曜は10:00〜13:30です。日曜・祝日は休診となります。LINEでのご予約は24時間受け付けています。</div></details><details><summary>健康保険は使えますか？</summary><div class="answer">健康保険の取り扱いがあります。ぎっくり腰・寝違え・スポーツ中のケガなど、いつ何をして痛めたのかがはっきりしている症状が対象です。交通事故の自賠責保険にも対応しており、窓口でのご負担は0円です。慢性的な肩こり・腰痛は保険の対象外となるため、自費施術でのご案内となります。</div></details><details><summary>施術時間はどれくらいですか？</summary><div class="answer">お身体の状態によって変わります。初回はカウンセリングと検査を含めてご案内しますので、少し長めにお時間をいただきます。</div></details></div>
     </section>
 
 
 
     <section class="final-offer reveal" aria-labelledby="final-cta-title">
       <img class="final-offer-bg" src="./assets/images/final-offer-bg.webp?v=3d71ca48" alt="" width="960" height="1154" loading="lazy">
-      <div class="final-offer-inner"><div><p class="final-offer-kicker">＼ 本気で変えたい方へ ／</p><h2 id="final-cta-title">身体の土台を整え<br>動ける身体を<br>取り戻しましょう。</h2><span class="offer-badge">ご好評につき延長・新たに30名様</span></div><div><span class="offer-price-label">10月31日（土）まで・初回限定</span><div class="offer-price">無料体験<small>募集中</small></div><p class="offer-note">※定員に達し次第、受付を終了します。</p></div></div>
+      <div class="final-offer-inner"><div><p class="final-offer-kicker">＼ 本気で変えたい方へ ／</p><h2 id="final-cta-title">身体の土台を整え<br>動ける身体を<br>取り戻しましょう。</h2><span class="offer-badge">ご好評につき延長・新たに30名様</span></div><div><span class="offer-price-label">10月31日（土）まで・セット施術 通常8,800円が</span><div class="offer-price">無料体験<small>募集中</small></div><p class="offer-note">※定員に達し次第、受付を終了します。</p></div></div>
     </section>
 
     <section class="final-line reveal"><h2>初回無料体験のご予約は<br><span class="accent">LINEから24時間受付</span></h2><div class="line-cta"><a class="line-cta-button" href="https://lin.ee/QbM8YQy"><span class="line-shine"></span><span class="line-cta-label">＼ 24時間受付・LINEで完結 ／</span><span class="line-cta-main"><span class="line-mark">LINE</span><strong>LINEで30秒予約</strong></span><span class="line-cta-note">先着順のため、お早めにご予約ください</span></a></div></section>
@@ -395,6 +410,14 @@
       });
     });
   })();
+  </script>
+<script>
+  // セット施術のドーナツ（8,800円 → 無料）。半分見えたらすぐ動かす
+  (function(){var d=document.querySelector('.dn'),n=document.getElementById('dnN');if(!d||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(!e.isIntersecting)return;o.disconnect();
+      setTimeout(function(){d.classList.add('in');var t0=performance.now(),D=3400;
+        (function f(t){var k=Math.min(1,(t-t0)/D),q=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2,v=Math.round(8800*(1-q)/10)*10;
+          if(k<1&&v>0){n.textContent=v.toLocaleString();requestAnimationFrame(f)}else{document.getElementById('dnV').textContent='無料'}})(t0)},150)})},{threshold:.5}).observe(d)})();
   </script>
 </body>
 </html>
