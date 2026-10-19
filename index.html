@@ -106,31 +106,24 @@
     footer{background:var(--blue-700)}.sticky-action.phone{background:#e8662e}.sticky-action.line{background:#06c755}
     @media (min-width:768px){body{padding-top:0}.page{margin-top:32px;margin-bottom:32px}.site-header{top:32px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}.line-shine{animation:none}}
 
-    /* 院長メッセージ動画。
-       YouTubeのiframeをそのまま置くと、再生しない人にも1MB近いプレイヤーJSを
-       読ませてしまう。サムネイルだけ先に出し、タップされて初めてiframeを差し込む。
-       サムネイルもYouTubeから読まず自前のWebPにして、初期表示で外部通信を起こさない。 */
+    /* 院長メッセージ動画。YouTubeではなく、このページに置いた動画（assets/images/director-message.mp4）を直接再生する。動画ファイルは R2（tajima2-media/lp2/director-message.mp4）。Pages/Vercel の静的配信は途中読み込み（Range）が不安定で iPhone で再生できないことがあるため。
+       初期表示を軽くするため preload="none"。ポスター画像と再生ボタンだけ先に出し、タップされて初めて動画を読み込む。
+       外部通信は起きない。 */
     .video-embed{margin-top:24px;border:1px solid rgba(194,124,0,.3);background:#fff}
     /* 16:9 の箱を先に確保しておく。サムネイルとiframeを同じ枠に重ねるので、
        再生ボタンを押しても高さが変わらない。 */
     .video-frame16{position:relative;aspect-ratio:16/9;background:#000}
     .video-frame16>*{position:absolute;inset:0;width:100%;height:100%}
-    .video-embed-btn{display:block;padding:0;border:0;background:#000;cursor:pointer;line-height:0}
-    .video-embed-btn img{width:100%;height:100%;object-fit:cover}
-    .video-frame16 iframe{border:0}
-    /* YouTubeの再生ボタン。ここだけは本家の形と色をそのまま使う。
-       四角い自作ボタンだと「ただの動画」に見えて、YouTubeだと伝わらない。 */
-    .video-play{position:absolute;inset:auto;top:50%;left:50%;width:68px;height:48px;transform:translate(-50%,-50%);background:#f00;border-radius:14%/24%;transition:opacity .2s ease}
-    .video-play::after{content:"";position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff}
-    .video-embed-btn:hover .video-play,.video-embed-btn:focus-visible .video-play{opacity:.85}
-    /* 下のメタ情報。YouTubeのカードに寄せて、SNSでやっている院だと分かるようにする */
+    .video-play-btn{display:block;padding:0;border:0;background:transparent;cursor:pointer;line-height:0;-webkit-tap-highlight-color:transparent}
+    .video-frame16 video{display:block;object-fit:cover;background:#000}
+    /* 再生ボタン。写真の上でも見える半透明の濃い丸＋白い三角（白フチ） */
+    .video-play{position:absolute;inset:auto;top:50%;left:50%;width:72px;height:72px;transform:translate(-50%,-50%);background:rgba(20,16,8,.62);border:3px solid #fff;border-radius:50%;box-shadow:0 4px 18px rgba(0,0,0,.35);transition:transform .2s ease,background .2s ease}
+    .video-play::after{content:"";position:absolute;top:50%;left:56%;transform:translate(-50%,-50%);border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff}
+    .video-play-btn:hover .video-play,.video-play-btn:focus-visible .video-play{transform:translate(-50%,-50%) scale(1.06);background:rgba(20,16,8,.78)}
+    /* 下のメタ情報（動画のタイトルと院名） */
     .video-meta{padding:12px 14px 13px;background:#fff;text-align:left}
-    .yt-badge{display:inline-flex;align-items:center;gap:5px;color:#606060;font-size:10px;font-weight:900;letter-spacing:.02em}
-    .yt-badge-mark{position:relative;display:inline-block;width:20px;height:14px;background:#f00;border-radius:14%/24%}
-    .yt-badge-mark::after{content:"";position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);border-style:solid;border-width:3.5px 0 3.5px 6px;border-color:transparent transparent transparent #fff}
     .video-title{margin:5px 0 2px;color:var(--ink);font-size:14px;font-weight:900;line-height:1.5}
     .video-channel{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 10px;margin:0;color:var(--muted);font-size:11.5px}
-    .video-link{color:var(--blue-500);font-size:11.5px;font-weight:800;text-decoration:underline}
 
     /* ── 「コアバランス整体が土台から整えます」のセクション ──
     　　見出しをゴシック900のベタ打ちからホームページと同じ明朝に変え、
@@ -335,7 +328,7 @@
       <div class="solution-details">
         <div class="director"><div class="avatar"><img src="./assets/images/director-profile.webp?v=203a58a8" alt="田島2丁目の整骨院 院長 古賀達也" width="320" height="320" loading="lazy"></div><p class="director-name"><small>院長</small><strong>古賀 達也</strong><span>柔道整復師（国家資格）／施術歴10年</span></p></div>
         <p class="message">目の前のつらさだけでなく、日常のどんな場面で困っているのかまで丁寧にお聞きします。不安や疑問を置き去りにせず、納得して受けられるケアを大切にします。</p>
-        <div class="video-embed"><div class="video-frame16"><button class="video-embed-btn" type="button" data-yt="fcZhYhWQhu4" aria-label="院長からのメッセージ動画をYouTubeで再生する"><img src="./assets/images/director-video-thumb.webp?v=50bd0673" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="video-play" aria-hidden="true"></span></button></div><div class="video-meta"><span class="yt-badge"><span class="yt-badge-mark" aria-hidden="true"></span>YouTube</span><p class="video-title">院長からのメッセージ</p><p class="video-channel">田島2丁目の整骨院<a class="video-link" href="https://www.youtube.com/watch?v=fcZhYhWQhu4" target="_blank" rel="noopener">YouTubeで見る</a></p></div></div>
+        <div class="video-embed"><div class="video-frame16"><video class="director-video" playsinline preload="none" poster="./assets/images/director-video-thumb.webp?v=50bd0673" width="1280" height="720" aria-label="院長からのメッセージ動画"><source src="https://pub-60cdcff6f8c0436790311540a41634d5.r2.dev/lp2/director-message.mp4" type="video/mp4"></video><button class="video-play-btn" type="button" aria-label="院長からのメッセージ動画を再生する"><span class="video-play" aria-hidden="true"></span></button></div><div class="video-meta"><p class="video-title">院長からのメッセージ</p><p class="video-channel">田島2丁目の整骨院　院長 古賀 達也</p></div></div>
         <p class="solution-result">そうすることで<br>「繰り返す不調や乱れ」を<br><span class="accent">身体の土台から整えます。</span></p>
       </div>
     </section>
@@ -373,19 +366,14 @@
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const targets=document.querySelectorAll('.reveal');
     if(reduceMotion||!('IntersectionObserver' in window)){targets.forEach((target)=>target.classList.add('visible'));}else{const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:0,rootMargin:'0px 0px 35% 0px'});targets.forEach((target)=>observer.observe(target));}
-    /* YouTubeはタップされて初めて読み込む。
-       再生しない人にプレイヤーのJSを読ませないため。 */
-    document.querySelectorAll('.video-embed-btn').forEach((btn)=>{
-      btn.addEventListener('click',()=>{
-        const frame=document.createElement('iframe');
-        frame.src='https://www.youtube-nocookie.com/embed/'+btn.dataset.yt+'?autoplay=1&rel=0&playsinline=1';
-        // 枠いっぱいに広げる指定はJS側で直接与える（生成要素なので確実にするため）
-        frame.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;';
-        frame.title='院長からのメッセージ';
-        frame.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
-        frame.allowFullscreen=true;
-        btn.replaceWith(frame);  // 枠(.video-frame16)は残るので大きさは変わらない
-      },{once:true});
+    /* 院長メッセージ動画：再生ボタンが押されて初めて動画を読み込んで再生する（再生しない人にはダウンロードさせない）。
+       再生が始まったらボタンを外し、ブラウザ標準の操作バー（一時停止・シーク・全画面）を出す。 */
+    document.querySelectorAll('.video-play-btn').forEach((btn)=>{
+      const video=btn.parentElement.querySelector('video');
+      if(!video){return;}
+      const ready=()=>{video.controls=true;btn.remove();};
+      btn.addEventListener('click',()=>{video.play().catch(()=>{video.controls=true;});ready();},{once:true});
+      video.addEventListener('play',ready,{once:true});
     });
     const videos=document.querySelectorAll('video[data-autoplay]');
     const loadVideo=(video)=>{const source=video.querySelector('source[data-src]');if(source){source.src=source.dataset.src;source.removeAttribute('data-src');video.load();}video.play().catch(()=>{});};
