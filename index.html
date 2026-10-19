@@ -185,6 +185,25 @@
     .rv-card p:last-child{margin:0}
     .rv-card b{color:#c2410c}
     .rv-note{font-size:11px;color:#8a7a5f;text-align:right;margin:0}
+    .ac{padding:30px 18px 30px;background:#fff}
+    .ac-mark{background:#008a5a;color:#fff;text-align:center;padding:12px 10px;margin:0 0 14px}
+    .ac-mark b{display:block;font-size:15px;line-height:1.5}
+    .ac-mark span{font-size:12.5px;opacity:.95}
+    .ac-maps{display:grid;gap:12px;margin:0 0 16px}
+    .ac-maps figure{margin:0;box-shadow:0 6px 16px rgba(122,84,10,.1);background:#fff}
+    .ac-maps img{width:100%;height:auto;display:block}
+    .ac-maps figcaption{padding:9px 12px;font-size:14px;font-weight:700;color:#4a3410}
+    .ac-maps figcaption b{color:#c2410c}
+    .ac-car{display:grid;grid-template-columns:1fr 1fr;border-left:5px solid #e08a00;box-shadow:0 6px 16px rgba(122,84,10,.1);margin:0 0 16px}
+    .ac-car img{width:100%;height:100%;min-height:140px;object-fit:cover;display:block}
+    .ac-car div{padding:12px;display:flex;flex-direction:column;justify-content:center;line-height:1.45}
+    .ac-car span{display:table;background:#e08a00;color:#fff;font-size:12px;font-weight:900;padding:1px 8px;margin-bottom:6px}
+    .ac-car b{font-size:17px;color:#c2410c}
+    .ac-car small{font-size:12px;color:#7a6a4f;margin-top:4px}
+    .ac-sub{text-align:center;font-weight:900;font-size:13.5px;color:#3a2c14;margin:0 0 6px}
+    .ac-walk{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#eee;margin:0 0 12px}
+    .ac-btn{display:block;text-align:center;border:2px solid #4285f4;color:#4285f4;font-weight:900;padding:12px;text-decoration:none;margin:0 0 10px}
+    .ac-note{font-size:11.5px;color:#8a7a5f;text-align:center;margin:0}
     .hx-points{display:grid;grid-template-columns:repeat(3,1fr);gap:min(2.4vw,10px);margin:0;padding:0;list-style:none}
     .hx-points li{display:grid;aspect-ratio:1;place-items:center;border:2px solid rgba(255,212,59,.9);border-radius:50%;background:rgba(255,250,234,.9);color:#4a3410;font-size:min(3.2vw,14px);font-weight:900;line-height:1.45;letter-spacing:.02em}
     @media (prefers-reduced-motion:reduce){.hx-ribbon span{animation:none}}
@@ -334,6 +353,22 @@
         <p>しかも、基本的に院長が対応してくれるらしい。<b>回数券とか押し付けないのも◎</b>　車も停められるし、田島に通うことになりそう。</p>
       </article>
       <p class="rv-note">※Googleの口コミより抜粋。個人の感想であり、効果を保証するものではありません</p>
+    </section>
+
+    <!-- 道のり（2026-10-19 本人「道が分からない人が多い」→ 早めの位置に）。地図は tajima2lp_パート2/tools/make_maps.py で作成 -->
+    <section class="ac" aria-labelledby="ac-title">
+      <p class="rv-kick">はじめての方へ</p>
+      <h2 id="ac-title" class="rv-h">迷わず来られる道のり</h2>
+      <div class="ac-mark"><b>筑肥新道（ちくひしんどう）沿い<br>「セブン-イレブン 福岡田島2丁目店」のすぐ近く</b><span>福岡市城南区田島2丁目20-8 1F</span></div>
+      <div class="ac-maps">
+        <figure><img src="./assets/images/map-befu.webp?v=464071b8" alt="地下鉄 別府駅から田島2丁目の整骨院までの道順（徒歩約10分）" width="1000" height="1000" loading="lazy"><figcaption><b>地下鉄七隈線 別府駅</b>から徒歩約10分</figcaption></figure>
+        <figure><img src="./assets/images/map-chayama.webp?v=70fa91d1" alt="地下鉄 茶山駅から田島2丁目の整骨院までの道順（徒歩約10分）" width="1000" height="1000" loading="lazy"><figcaption><b>地下鉄七隈線 茶山駅</b>から徒歩約10分</figcaption></figure>
+      </div>
+      <div class="ac-car"><img src="./assets/images/parking.jpg?v=122f5b6c" alt="田島2丁目の整骨院の看板と、目の前に停まる車" loading="lazy"><div><span>お車の方</span><b>駐車場は目の前に<br>停められます！</b><small>院の目の前に4台分ございます</small></div></div>
+      <p class="ac-sub">▼ セブン-イレブンのある交差点から、院の入口まで（約25秒）</p>
+      <video class="ac-walk" src="https://pub-60cdcff6f8c0436790311540a41634d5.r2.dev/lp2/walk4.mp4" poster="./assets/images/walk4-poster.jpg?v=f38e0469" muted playsinline preload="none" controls aria-label="セブン-イレブンの交差点から筑肥新道沿いを歩き、院の入口まで"></video>
+      <a class="ac-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=33.570229,130.370148">今いる場所からの道順を見る（Googleマップ）</a>
+      <p class="ac-note">地図データ © OpenStreetMap contributors ／ 迷ったときは、LINEかお電話（<a href="tel:09073928693">090-7392-8693</a>）でお気軽にどうぞ。</p>
     </section>
 
     <section class="image-section reveal" aria-label="こんなお悩みはありませんか">
