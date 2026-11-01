@@ -11,5 +11,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://lp.tajima2chome.com/",
+      "permanent": false
+    },
+    {
+      "source": "/index.html",
+      "destination": "https://lp.tajima2chome.com/",
+      "permanent": false
+    }
   ]
 }
