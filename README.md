@@ -1,4 +1,9 @@
-# 田島2丁目の整骨院 LP
+# 田島2丁目の整骨院 LP（旧LP・2026-11-01 から転送のみ）
+
+**2026-11-01：10/31までの無料体験が終わったので、このLPは https://lp.tajima2chome.com/ へ転送するだけにした**
+（Pages は `_redirects`、Vercel は `vercel.json` の redirects、念のため index.html も転送ページ）。
+元のページは git タグ `before-1101-redirect`（コミット 02c4538）。戻すなら `git checkout before-1101-redirect -- index.html` して _redirects と vercel.json の redirects を消す。
+
 
 田島2丁目の整骨院のランディングページです。
 `yoshizumi-seikotsu` の縦長スマートフォンLPを参考に、画像差し替え前の構成と文章を実装しています。
